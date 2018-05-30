@@ -1,0 +1,24 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.div-body {
+	position: relative;
+	padding: 10px;
+	width: 365px;
+	left: 0px;
+	transition: left 1s;
+}
+.div-body p {
+	margin-top: 10px;
+	line-height: 1.5;
+}
+.p-author {
+	text-align: right;
+}
+.btn-next {
+	position: relative;
+}
