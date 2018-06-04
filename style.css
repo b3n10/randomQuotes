@@ -2,18 +2,20 @@
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	overflow: hidden;
 }
 
 .container {
-	max-width: 365px;
+	max-width: 565px;
 	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	overflow: hidden;
 }
 
 .div-body {
 	position: relative;
 	padding: 10px;
-	width: 365px;
+	width: 100%;
 	left: 0px;
 	transition: left 1s;
 }
