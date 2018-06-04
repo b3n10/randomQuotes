@@ -15,5 +15,20 @@ class DB {
 		return false;
 	}
 
+	private function connect() {
+
+		try {
+
+		$db = new PDO('mysql:host=' . Config::get('host') . ';dbname=' . Config::get('dbname') , Config::get('user') , Config::get('password'));
+
+		return $db;
+
+		} catch (PDOException $e) {
+
+			die($e->getMessage());
+
+		}
+
+	}
 
 }
