@@ -6,22 +6,15 @@ class DB {
 
 	public function __construct() {
 
-		if (!$this->_connection) {
-
-			$this->_connection = $this->connect();
-
-		}
-
-		return $this->_connection;
-	}
-
-	private function connect() {
-
 		try {
 
-		$db = new PDO('mysql:host=' . Config::get('host') . ';dbname=' . Config::get('dbname') , Config::get('user') , Config::get('password'));
+			if (!$this->_connection) {
 
-		return $db;
+				$db = new PDO('mysql:host=' . Config::get('host') . ';dbname=' . Config::get('dbname') , Config::get('user') , Config::get('password'));
+
+				$this->_connection = $db;
+
+			}
 
 		} catch (PDOException $e) {
 
@@ -29,6 +22,10 @@ class DB {
 
 		}
 
+	}
+
+	public function connect() {
+		return $this->_connection;
 	}
 
 }
