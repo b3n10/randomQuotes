@@ -5,6 +5,11 @@
 	overflow: hidden;
 }
 
+.container {
+	max-width: 365px;
+	margin: 0 auto;
+}
+
 .div-body {
 	position: relative;
 	padding: 10px;
