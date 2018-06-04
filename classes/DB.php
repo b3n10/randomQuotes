@@ -8,11 +8,11 @@ class DB {
 
 		if (!$this->_connection) {
 
-			return true;
+			$this->_connection = $this->connect();
 
 		}
 
-		return false;
+		return $this->_connection;
 	}
 
 	private function connect() {
