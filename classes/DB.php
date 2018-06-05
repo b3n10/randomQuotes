@@ -1,4 +1,5 @@
 <?php
+// uses singleton method
 
 class DB {
 
