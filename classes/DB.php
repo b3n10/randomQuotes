@@ -2,19 +2,14 @@
 
 class DB {
 
-	private $_connection = null;
+	private static $_connection = null;
+	private $db;
 
 	public function __construct() {
 
 		try {
 
-			if (!$this->_connection) {
-
-				$db = new PDO('mysql:host=' . Config::get('host') . ';dbname=' . Config::get('dbname') , Config::get('user') , Config::get('password'));
-
-				$this->_connection = $db;
-
-			}
+				$this->db = new PDO('mysql:host=' . Config::get('host') . ';dbname=' . Config::get('dbname') , Config::get('user') , Config::get('password'));
 
 		} catch (PDOException $e) {
 
@@ -24,8 +19,16 @@ class DB {
 
 	}
 
-	public function connect() {
-		return $this->_connection;
+	public static function connect() {
+
+		if (!isset(self::$_connection)) {
+
+			self::$_connection = new DB();
+
+		}
+
+		return self::$_connection;
+
 	}
 
 }
