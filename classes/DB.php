@@ -43,8 +43,7 @@ class DB {
 
 		if ($stmt->rowCount()) {
 
-			// return result as obj
-			// but fetchAll returns the obj inside an array
+			// return result as array of obj
 			return $stmt->fetchAll(PDO::FETCH_OBJ);
 
 		}
