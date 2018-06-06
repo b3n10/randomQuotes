@@ -32,4 +32,25 @@ class DB {
 
 	}
 
+	// retrieve $item based on $id
+	public function find($item, $id) {
+
+		$sql = 'SELECT ' . $item . ' FROM posts WHERE id = ?';
+
+		$stmt = $this->_pdo->prepare($sql);
+		$stmt->bindValue(1, $id);
+		$stmt->execute();
+
+		if ($stmt->rowCount()) {
+
+			// return result as obj
+			// but fetchAll returns the obj inside an array
+			return $stmt->fetchAll(PDO::FETCH_OBJ);
+
+		}
+
+		return false;
+
+	}
+
 }
