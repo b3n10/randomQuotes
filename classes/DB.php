@@ -33,7 +33,7 @@ class DB {
 	}
 
 	// retrieve random $item
-	public function find() {
+	public function getRandomQuote() {
 
 		$sql = '
 			SELECT
