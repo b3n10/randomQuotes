@@ -32,7 +32,7 @@ class DB {
 
 	}
 
-	// retrieve random $item
+	// retrieve random quote
 	public function getRandomQuote() {
 
 		$sql = '
