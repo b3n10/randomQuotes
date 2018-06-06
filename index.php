@@ -2,6 +2,8 @@
 
 require_once "libs/init.php";
 
+$quote = new Quote(DB::connect());
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,10 +17,10 @@ require_once "libs/init.php";
 	<div class="container">
 		<div class='div-body'>
 			<p id='p-text'>
-			I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God, who loved me and gave himself for me.
+				<?php echo $quote->get('body'); ?>
 			</p>
 			<p class="p-author">
-			- Galatians 2:20
+				<?php echo $quote->get('title'); ?>
 			</p>
 		</div>
 		<div class="div-button">
