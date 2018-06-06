@@ -4,6 +4,8 @@ require_once "libs/init.php";
 
 $quote = new Quote(DB::connect());
 
+$results = $quote->get();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +19,10 @@ $quote = new Quote(DB::connect());
 	<div class="container">
 		<div class='div-body'>
 			<p id='p-text'>
-				<?php echo $quote->get('body'); ?>
+				<?php echo $results['body']; ?>
 			</p>
 			<p class="p-author">
-				<?php echo $quote->get('title'); ?>
+				<?php echo $results['title']; ?>
 			</p>
 		</div>
 		<div class="div-button">
