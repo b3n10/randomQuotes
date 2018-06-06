@@ -33,12 +33,12 @@ class DB {
 	}
 
 	// retrieve random $item
-	public function find($item) {
+	public function find() {
 
 		$sql = '
-			SELECT '
-				. $item .
-			' FROM posts
+			SELECT
+				title, body
+			FROM posts
 				ORDER BY RAND()
 			LIMIT 1';
 
@@ -47,8 +47,8 @@ class DB {
 
 		if ($stmt->rowCount()) {
 
-			// return result as array of obj
-			return $stmt->fetchAll(PDO::FETCH_OBJ);
+			// return result as array
+			return $stmt->fetch();
 
 		}
 
