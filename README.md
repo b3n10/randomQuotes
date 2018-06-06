@@ -11,8 +11,7 @@
 - End: ?
 
 #### TODO:
-- SQL
-- Database
+- AJAX get results
 - Submit page
 - Admin log in page
 - Approve page
