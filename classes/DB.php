@@ -4,13 +4,13 @@
 class DB {
 
 	private static $_connection = null;
-	private $db;
+	private $_pdo;
 
 	public function __construct() {
 
 		try {
 
-				$this->db = new PDO('mysql:host=' . Config::get('host') . ';dbname=' . Config::get('dbname') , Config::get('user') , Config::get('password'));
+				$this->_pdo = new PDO('mysql:host=' . Config::get('host') . ';pdoname=' . Config::get('dbname') , Config::get('user') , Config::get('password'));
 
 		} catch (PDOException $e) {
 
