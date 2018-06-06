@@ -8,27 +8,29 @@ $results = DB::connect()->getRandomQuote();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Project 1</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div class="container">
-		<div class='div-body'>
-			<p id='p-text'>
-				<?php echo $results['body']; ?>
-			</p>
-			<p class="p-author">
-				<?php echo $results['title']; ?>
-			</p>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Project 1</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="div-body">
+				<div class='div-maintext'>
+					<p id='p-text'>
+					<?php echo $results['body']; ?>
+					</p>
+					<p class="p-author">
+					<?php echo $results['title']; ?>
+					</p>
+				</div>
+			</div>
+			<div class="div-button">
+				<button id='btn-next'>Next</button>
+			</div>
 		</div>
-		<div class="div-button">
-			<button id='btn-next'>Next</button>
-		</div>
-	</div>
-	<script src="main.js">
-	</script>
-</body>
+		<script src="main.js">
+		</script>
+	</body>
 </html>
