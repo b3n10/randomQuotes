@@ -6,20 +6,28 @@
 
 .container {
 	max-width: 565px;
+	height: 250px;
 	margin: 0 auto;
 	padding: 20px;
 	border: 1px solid #ccc;
-	overflow: hidden;
 }
 
 .div-body {
+	height: 90%;
+	overflow: hidden;
+}
+.div-button {
+	height: 10%;
+}
+
+.div-maintext {
 	position: relative;
 	padding: 10px;
 	width: 100%;
 	left: 0px;
-	transition: left 1s;
+	transition: left 0.3s;
 }
-.div-body p {
+.div-maintext p {
 	margin-top: 10px;
 	line-height: 1.5;
 }
