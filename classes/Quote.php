@@ -10,12 +10,9 @@ class Quote {
 
 	public function get($item) {
 
-		// $id = random_number()
-		$id = 1;
-
 		// get first index (which is an obj) of returned array
 		// then access the $item from obj
-		return $this->_db->find($item, $id)[0]->{$item};
+		return $this->_db->find($item)[0]->{$item};
 
 	}
 
