@@ -32,13 +32,17 @@ class DB {
 
 	}
 
-	// retrieve $item based on $id
-	public function find($item, $id) {
+	// retrieve random $item
+	public function find($item) {
 
-		$sql = 'SELECT ' . $item . ' FROM posts WHERE id = ?';
+		$sql = '
+			SELECT '
+				. $item .
+			' FROM posts
+				ORDER BY RAND()
+			LIMIT 1';
 
 		$stmt = $this->_pdo->prepare($sql);
-		$stmt->bindValue(1, $id);
 		$stmt->execute();
 
 		if ($stmt->rowCount()) {
