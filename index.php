@@ -28,6 +28,7 @@ $results = DB::connect()->getRandomQuote();
 			</div>
 			<div class="div-button">
 				<button id='btn-next'>Next</button>
+				<button id='btn-next'>Submit own</button>
 			</div>
 		</div>
 		<script src="libs/js/dist/main.js">
