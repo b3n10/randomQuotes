@@ -12,7 +12,7 @@ $results = DB::connect()->getRandomQuote();
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<title>Project 1</title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="libs/css/style.css">
 	</head>
 	<body>
 		<div class="container">
@@ -30,7 +30,7 @@ $results = DB::connect()->getRandomQuote();
 				<button id='btn-next'>Next</button>
 			</div>
 		</div>
-		<script src="main.js">
+		<script src="libs/js/dist/main.js">
 		</script>
 	</body>
 </html>
