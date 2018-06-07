@@ -11,7 +11,8 @@
 - End: ?
 
 #### TODO:
+- CSS
+- Separate class for getting random quote
 - AJAX get results
 - Submit page
 - Admin log in page
-- Approve page
