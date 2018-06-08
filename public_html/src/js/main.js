@@ -1,5 +1,6 @@
 const txt_body = document.getElementsByClassName('div_text')[0];
 const next = document.getElementsByClassName('next')[0];
+const delay = 200;
 
 next.addEventListener('click', () => {
 	txt_body.style.left = '-565px';
@@ -12,10 +13,10 @@ next.addEventListener('click', () => {
 				txt_body.style.display = 'block';
 				setTimeout(() => {
 					txt_body.style.left = '0px';
-				}, 500);
-			}, 100);
+				}, delay);
+			}, delay);
 		}
-	}, 500);
+	}, delay);
 
 });
 
