@@ -3,7 +3,8 @@
 require_once "libs/init.php";
 
 // get $results as array
-$results = DB::connect()->getRandomQuote();
+$quote = new Quote();
+$results = $quote->getRandom();
 
 ?>
 <!DOCTYPE html>

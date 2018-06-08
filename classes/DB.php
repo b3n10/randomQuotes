@@ -3,8 +3,7 @@
 
 class DB {
 
-	private static $_connection = null;
-	private $_pdo;
+	protected $_pdo;
 
 	public function __construct() {
 
@@ -17,42 +16,6 @@ class DB {
 			die($e->getMessage());
 
 		}
-
-	}
-
-	public static function connect() {
-
-		if (!isset(self::$_connection)) {
-
-			self::$_connection = new DB();
-
-		}
-
-		return self::$_connection;
-
-	}
-
-	// retrieve random quote
-	public function getRandomQuote() {
-
-		$sql = '
-			SELECT
-				title, body
-			FROM posts
-				ORDER BY RAND()
-			LIMIT 1';
-
-		$stmt = $this->_pdo->prepare($sql);
-		$stmt->execute();
-
-		if ($stmt->rowCount()) {
-
-			// return result as array
-			return $stmt->fetch();
-
-		}
-
-		return false;
 
 	}
 
