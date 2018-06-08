@@ -11,7 +11,7 @@
 - End: ?
 
 #### TODO:
-- CSS
+- CSS navbar
 - Separate class for getting random quote
 - AJAX get results
 - Submit page
