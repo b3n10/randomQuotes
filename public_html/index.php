@@ -1,6 +1,6 @@
 <?php
 
-require_once "libs/init.php";
+require_once "../resources/init.php";
 
 // get $results as array
 $quote = new Quote();
@@ -13,7 +13,7 @@ $results = $quote->getRandom();
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<title>Project 1</title>
-		<link rel="stylesheet" href="libs/css/style.css">
+		<link rel="stylesheet" href="./dist/css/style.css">
 	</head>
 	<body>
 	<div class="nav">
@@ -38,7 +38,7 @@ $results = $quote->getRandom();
 			</div>
 		</div>
 	</div>
-		<script src="libs/js/dist/main.js">
+		<script src="./dist/js/main.js">
 		</script>
 	</body>
 </html>

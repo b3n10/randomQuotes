@@ -1,6 +1,6 @@
 const txt_body = document.getElementsByClassName('div_text')[0];
 const next = document.getElementsByClassName('next')[0];
-const delay = 200;
+const delay = 100;
 
 next.addEventListener('click', () => {
 	txt_body.style.left = '-565px';
