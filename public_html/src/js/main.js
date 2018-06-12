@@ -1,8 +1,15 @@
+// texts
 const txt_body = document.getElementsByClassName('div_text')[0];
-const next = document.getElementsByClassName('next')[0];
 const pbody = document.getElementById('pbody');
 const ptitle = document.getElementById('ptitle');
-const delay = 100;
+
+// buttons
+const next = document.getElementsByClassName('next')[0];
+const shareFB = document.getElementsByClassName('sharefb')[0];
+
+const delay = 100; // for animation
+const baseURL = window.location.href;
+let shareURL = window.location.href;
 
 next.addEventListener('click', () => {
 	txt_body.style.left = '-565px';
@@ -30,9 +37,14 @@ next.addEventListener('click', () => {
 				xhr.onload = () => {
 					if (xhr.status === 200) {
 						txt_body.style.left = '0px';
+
+						// update text
 						const response = JSON.parse(xhr.responseText);
 						pbody.innerText = response.body;
 						ptitle.innerText = response.title;
+
+						// update URL
+						window.history.replaceState('', '', `${baseURL}?id=${response.id}`);
 					}
 				};
 
@@ -44,4 +56,9 @@ next.addEventListener('click', () => {
 
 	}
 
+});
+
+shareFB.addEventListener('click', () => {
+	shareURL = window.location.href;
+	window.open(`https://www.facebook.com/sharer/sharer.php?u=${shareURL}`, '_blank');
 });
