@@ -90,3 +90,10 @@ body {
 	color: #111;
 	cursor: pointer;
 }
+
+div.error {
+	margin: 0 auto;
+	width: 400px;
+	text-align: center;
+	color: #DD0000;
+}
