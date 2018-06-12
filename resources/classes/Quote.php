@@ -3,26 +3,33 @@
 class Quote extends DB {
 
 	// retrieve random quote
-	public function getRandom() {
+	public function getRandom($id = '') {
 
-			$sql = '
+		$sql = '
 			SELECT
 				id, title, body
-			FROM posts
-				ORDER BY RAND()
-			LIMIT 1';
+			FROM posts';
 
+		if (!empty($id)) {
+			$sql .= ' WHERE id = :id';
+			$stmt = $this->_pdo->prepare($sql);
+			$stmt->bindParam(':id', $id);
+			$stmt->execute();
+		} else {
+			$sql .= ' ORDER BY RAND() LIMIT 1';
 			$stmt = $this->_pdo->prepare($sql);
 			$stmt->execute();
+		}
 
-			if ($stmt->rowCount()) {
 
-				// return result as array
-				return $stmt->fetch();
+		if ($stmt->rowCount()) {
 
-			}
+			// return result as array
+			return $stmt->fetch();
 
-			return false;
+		}
+
+		return false;
 
 	}
 
