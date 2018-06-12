@@ -38,6 +38,13 @@ $results = $quote->getRandom();
 			</div>
 		</div>
 	</div>
+		<script>
+			// add id to URL onload
+			window.onload = function() {
+				var url = window.location.href.indexOf('?') ? window.location.href.substr(0, window.location.href.indexOf('?')) : window.location.href;
+				window.history.replaceState('', '', url + "?id=<?php echo $results['id'];?>");
+			};
+		</script>
 		<script src="./dist/js/main.js">
 		</script>
 	</body>
