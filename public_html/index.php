@@ -5,14 +5,13 @@ require_once "../resources/init.php";
 $quote = new Quote();
 
 if (!empty($_GET['id'])) {
-	// get $results as array
 	$results = $quote->getRandom($_GET['id']);
 } else {
 	$results = $quote->getRandom();
 }
 
 if (!$results) {
-	Redirect::to(404);
+	header('Location: ../resources/errors/404.php');
 }
 
 ?>
