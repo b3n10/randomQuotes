@@ -27,8 +27,8 @@ $results = $quote->getRandom();
 		<div class="div_mainbody">
 			<div class="div_container_text">
 				<div class="div_text">
-					<p><?php echo $results['body'] ?></p>
-					<p><?php echo $results['title'] ?></p>
+					<p id='pbody'><?php echo $results['body'] ?></p>
+					<p id='ptitle'><?php echo $results['title'] ?></p>
 				</div>
 			</div>
 			<div class="div_button">
