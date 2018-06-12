@@ -2,9 +2,18 @@
 
 require_once "../resources/init.php";
 
-// get $results as array
 $quote = new Quote();
-$results = $quote->getRandom();
+
+if (!empty($_GET['id'])) {
+	// get $results as array
+	$results = $quote->getRandom($_GET['id']);
+} else {
+	$results = $quote->getRandom();
+}
+
+if (!$results) {
+	Redirect::to(404);
+}
 
 ?>
 <!DOCTYPE html>
