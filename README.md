@@ -12,6 +12,5 @@
 
 #### TODO:
 - CSS navbar
-- AJAX get results
 - Submit page
 - Admin log in page
