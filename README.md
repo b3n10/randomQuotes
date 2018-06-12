@@ -11,7 +11,8 @@
 - End: ?
 
 #### TODO:
-- Fix twitter semi-colon on string
-- CSS navbar
-- Submit page
-- Admin log in page
+- [ ] CSS navbar
+- [x] Fix twitter semi-colon on string
+- [ ] Add redirect class
+- [ ] Submit page
+- [ ] Admin log in page
