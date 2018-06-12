@@ -7,7 +7,7 @@ class Quote extends DB {
 
 			$sql = '
 			SELECT
-				title, body
+				id, title, body
 			FROM posts
 				ORDER BY RAND()
 			LIMIT 1';
