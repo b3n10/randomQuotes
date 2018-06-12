@@ -2,8 +2,8 @@
 const txt_body = document.getElementsByClassName('div_text')[0];
 const pbody = document.getElementById('pbody');
 const ptitle = document.getElementById('ptitle');
-let shareBody = '';
-let shareTitle = '';
+let shareBody = pbody.innerText;
+let shareTitle = ptitle.innerText;
 
 // buttons
 const next = document.getElementsByClassName('next')[0];
@@ -70,5 +70,6 @@ shareFB.addEventListener('click', () => {
 
 shareTW.addEventListener('click', () => {
 	shareURL = window.location.href;
-	window.open(`https://twitter.com/intent/tweet?text=${shareBody} -${shareTitle} (${shareURL})`, '_blank');
+	const twURL = encodeURIComponent(`${shareBody} -${shareTitle} (${shareURL})`);
+	window.open(`https://twitter.com/intent/tweet?text=${twURL}`, '_blank');
 });
