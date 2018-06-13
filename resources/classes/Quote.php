@@ -5,32 +5,70 @@ class Quote extends DB {
 	// retrieve random quote
 	public function getRandom($id = '') {
 
-		$sql = '
-			SELECT
-				id, title, body
-			FROM posts';
+		$isApproved = false;
+		$arr = [];
 
 		if (!empty($id)) {
-			$sql .= ' WHERE id = :id';
+
+			$sql = '
+			SELECT
+				*
+			FROM posts
+			WHERE id = :id';
+
 			$stmt = $this->_pdo->prepare($sql);
 			$stmt->bindParam(':id', $id);
 			$stmt->execute();
+
+			if ($stmt->rowCount()) {
+				$arr = $stmt->fetch();
+				return $this->getArr($arr);
+			}
+
+			return false;
+
 		} else {
-			$sql .= ' ORDER BY RAND() LIMIT 1';
-			$stmt = $this->_pdo->prepare($sql);
-			$stmt->execute();
+
+			while (!$isApproved) {
+
+				$sql = '
+				SELECT
+					*
+				FROM posts
+				ORDER BY RAND() LIMIT 1';
+				$stmt = $this->_pdo->prepare($sql);
+				$stmt->execute();
+
+				if ($stmt->rowCount()) {
+
+					// return result as array
+					$arr = $stmt->fetch();
+					$isApproved = $this->isApproved($arr['approved']);
+
+				}
+
+			}
+
+			return $this->getArr($arr);
+
 		}
+	}
 
-
-		if ($stmt->rowCount()) {
-
-			// return result as array
-			return $stmt->fetch();
-
+	// return array with data
+	private function getArr($arr) {
+		if ($this->isApproved($arr['approved'])) {
+			return array(
+				'id'		=>	$arr['id'],
+				'body'	=>	$arr['body'],
+				'title'	=>	$arr['title']
+			);
 		}
-
 		return false;
+	}
 
+	// check if quote is approved
+	private function isApproved($approve) {
+		return $approve ? true : false;
 	}
 
 }
