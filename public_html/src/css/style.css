@@ -10,16 +10,12 @@ body {
 
 .container {
 	position: relative;
-	/*
-	media-query
-	width: 620px;
-	margin: 0 auto;
-	 */
 }
 
 .div_mainbody {
 	max-height: 640px;
-	width: 320px;
+	min-width: 320px;
+	max-width: 640px;
 	margin: 0 auto;
 	background: #fff;
 	color: #111;
@@ -40,8 +36,6 @@ body {
 	width: 100%;
 	left: 0px;
 	transition: left 0.3s;
-}
-.div_text p {
 }
 .div_text p:first-child {
 	line-height: 1.4;
@@ -96,4 +90,16 @@ div.error {
 	width: 400px;
 	text-align: center;
 	color: #DD0000;
+}
+
+@media (min-width: 768px) {
+	.div_text p#pbody {
+		font-size: 1.8em;
+	}
+	.div_text p#ptitle {
+		font-size: 1.4em;
+	}
+	.div_container_text {
+		min-height: 260px;
+	}
 }
