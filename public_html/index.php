@@ -6,12 +6,11 @@ $quote = new Quote();
 
 if (!empty($_GET['id'])) {
 	$results = $quote->getRandom($_GET['id']);
+	if (!$results) {
+		Redirect::to(404);
+	}
 } else {
 	$results = $quote->getRandom();
-}
-
-if (!$results) {
-	header('Location: ../resources/errors/404.php');
 }
 
 ?>
