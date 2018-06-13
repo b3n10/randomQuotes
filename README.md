@@ -16,4 +16,4 @@
 - [x] ~~Add redirect class~~ Redirect to 404.php
 - [x] Add media query
 - [ ] Submit page
-- [ ] ~~Admin log in page~~
+- [ ] Admin log in page
