@@ -4,13 +4,15 @@ require_once "../resources/init.php";
 
 $quote = new Quote();
 
-if (!empty($_GET['id'])) {
-	$results = $quote->getRandom($_GET['id']);
+// if no id passed in URL
+if (empty($_GET['id'])) {
+	$results = $quote->fetch();
+// if URL has id
+} else {
+	$results = $quote->fetch($_GET['id']);
 	if (!$results) {
 		Redirect::to(404);
 	}
-} else {
-	$results = $quote->getRandom();
 }
 
 ?>

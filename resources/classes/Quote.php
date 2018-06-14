@@ -2,8 +2,8 @@
 
 class Quote extends DB {
 
-	// retrieve random quote
-	public function getRandom($id = '') {
+	// fetch a quote
+	public function fetch($id = '') {
 
 		$isApproved = false;
 		$arr = [];
@@ -52,9 +52,11 @@ class Quote extends DB {
 			return $this->getArr($arr);
 
 		}
+
 	}
 
 	// return array with data
+	// if quote is not approved, return false
 	private function getArr($arr) {
 		if ($this->isApproved($arr['approved'])) {
 			return array(
