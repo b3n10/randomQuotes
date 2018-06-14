@@ -17,9 +17,11 @@
 			<form action="" method="POST">
 				<div class="div_submit">
 					<input id="author" type="text" name="author" placeholder="Author of quote" autocomplete="off">
+					<p id="p_author_limit">Max: 30 chars</p>
 				</div>
 				<div class="div_submit">
-					<textarea id="bodyText" name="bodyText" placeholder="Body of text"></textarea>
+					<textarea id="bodyText" name="bodyText" placeholder="Body of text">The saying is trustworthy and deserving of full acceptance, that Christ Jesus came into the world to save sinners, of whom I am the foremost. foremost foremost foremost foremost foremost foremost asdf</textarea>
+					<p id="p_bodytext_limit">Max: 200 chars</p>
 				</div>
 				<div class="div_submit">
 					<button type="submit">Submit</button>
