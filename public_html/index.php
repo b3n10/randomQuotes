@@ -36,8 +36,8 @@ if (empty($_GET['id'])) {
 		<div class="div_mainbody">
 			<div class="div_container_text">
 				<div class="div_text">
-					<p id='pbody'><?php echo $results['body'] ?></p>
-					<p id='ptitle'><?php echo $results['title'] ?></p>
+					<p id='ptext'><?php echo $results['text'] ?></p>
+					<p id='pauthor'><?php echo $results['author'] ?></p>
 				</div>
 			</div>
 			<div class="div_button">

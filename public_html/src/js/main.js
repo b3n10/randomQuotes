@@ -1,9 +1,9 @@
 // texts
 const txt_body = document.getElementsByClassName('div_text')[0];
-const pbody = document.getElementById('pbody');
-const ptitle = document.getElementById('ptitle');
-let shareBody = pbody.innerText;
-let shareTitle = ptitle.innerText;
+const ptext = document.getElementById('ptext');
+const pauthor = document.getElementById('pauthor');
+let shareText = ptext.innerText;
+let shareAuthor = pauthor.innerText;
 
 // buttons
 const next = document.getElementsByClassName('next')[0];
@@ -43,10 +43,10 @@ next.addEventListener('click', () => {
 
 						// update text
 						const response = JSON.parse(xhr.responseText);
-						pbody.innerText = response.body;
-						ptitle.innerText = response.title;
-						shareBody = response.body;
-						shareTitle = response.title;
+						ptext.innerText = response.text;
+						pauthor.innerText = response.author;
+						shareText = response.text;
+						shareAuthor = response.author;
 
 						// update URL
 						window.history.replaceState('', '', `${baseURL}?id=${response.id}`);
@@ -70,6 +70,6 @@ shareFB.addEventListener('click', () => {
 
 shareTW.addEventListener('click', () => {
 	shareURL = window.location.href;
-	const twURL = encodeURIComponent(`${shareBody} -${shareTitle} (${shareURL})`);
+	const twURL = encodeURIComponent(`${shareText} -${shareAuthor} (${shareURL})`);
 	window.open(`https://twitter.com/intent/tweet?text=${twURL}`, '_blank');
 });

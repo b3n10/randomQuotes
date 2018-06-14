@@ -101,10 +101,10 @@ div.error {
 }
 
 @media (min-width: 768px) {
-	.div_text p#pbody {
+	.div_text p#ptext {
 		font-size: 1.8em;
 	}
-	.div_text p#ptitle {
+	.div_text p#pauthor {
 		font-size: 1.4em;
 	}
 	.div_container_text {

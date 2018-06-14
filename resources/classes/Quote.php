@@ -60,9 +60,9 @@ class Quote extends DB {
 	private function getArr($arr) {
 		if ($this->isApproved($arr['approved'])) {
 			return array(
-				'id'		=>	$arr['id'],
-				'body'	=>	$arr['body'],
-				'title'	=>	$arr['title']
+				'id'			=>	$arr['id'],
+				'text'		=>	$arr['text'],
+				'author'	=>	$arr['author']
 			);
 		}
 		return false;
