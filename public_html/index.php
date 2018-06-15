@@ -29,8 +29,10 @@ if (empty($_GET['id'])) {
 		<div class="logo">
 			<a href="#">randomQuotes</a>
 		</div>
-		<a href="#">about</a>
-		<a href="#">submit quote</a>
+		<div class="navlinks">
+			<a href="#">about</a>
+			<a href="#">submit quote</a>
+		</div>
 	</div>
 	<div class="container">
 		<div class="div_mainbody">
