@@ -13,7 +13,8 @@
 #### TODO:
 - [ ] CSS navbar
 - [x] Fix twitter semi-colon on string
-- [x] ~~Add redirect class~~ Redirect to 404.php
+- [x] Add redirect class
+- [ ] Redirect to errors/success submit
 - [x] Add media query
-- [ ] Submit page
-- [ ] Admin log in page
+- [x] Submit page
+- [ ] Admin log in & approval page
