@@ -103,6 +103,10 @@ div.error {
 .div_submit {
 	width: 100%;
 	padding: 7px;
+	overflow: hidden;
+}
+.div_submit:first-child {
+	padding-top: 15px;
 }
 #p_author_limit,
 #p_bodytext_limit {
@@ -127,6 +131,17 @@ div.error {
 	font-family: helvetica neue, Helvetica, Arial, sans-serif;
 	padding: 5px;
 	font-size: 1em;
+	background-color: #2f7fca;
+	color: #fff;
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 5px 10px;
+	width: 100px;
+	margin-left: 10px;
+}
+.div_submit > button#btn_clear {
+	background-color: #ca2f2f
 }
 
 @media (min-width: 768px) {
@@ -138,5 +153,8 @@ div.error {
 	}
 	.div_container_text {
 		min-height: 260px;
+	}
+	#bodyText {
+		height: 90px;
 	}
 }
