@@ -25,6 +25,18 @@ body {
 	box-shadow: 0 1px 3px #ccc;
 }
 
+div.logo {
+	text-align: center;
+	font-weight: 900;
+	font-size: 1.4em;
+	padding: 10px 0;
+	background: rgb(0, 0, 238);
+}
+div.logo a {
+	text-decoration: none;
+	color: #fff;
+}
+
 .div_container_text {
 	min-height: 245px;
 	overflow: hidden;
