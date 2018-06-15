@@ -20,12 +20,12 @@
 					<p id="p_author_limit">Max: 30 chars</p>
 				</div>
 				<div class="div_submit">
-					<textarea id="bodyText" name="bodyText" placeholder="Body of text">The saying is trustworthy and deserving of full acceptance, that Christ Jesus came into the world to save sinners, of whom I am the foremost. foremost foremost foremost foremost foremost foremost asdf</textarea>
+					<textarea id="bodyText" name="bodyText" placeholder="Body of text"></textarea>
 					<p id="p_bodytext_limit">Max: 200 chars</p>
 				</div>
 				<div class="div_submit">
-					<button type="submit">Submit</button>
-					<button type="button">Clear</button>
+					<button type="submit" id="btn_submit">Submit</button>
+					<button type="button" id="btn_clear">Clear</button>
 				</div>
 			</form>
 		</div>
