@@ -25,16 +25,39 @@ body {
 	box-shadow: 0 1px 3px #ccc;
 }
 
+div.nav {
+	background: rgb(0, 0, 238);
+}
+
 div.logo {
 	text-align: center;
 	font-weight: 900;
 	font-size: 1.4em;
 	padding: 10px 0;
-	background: rgb(0, 0, 238);
 }
 div.logo a {
 	text-decoration: none;
 	color: #fff;
+}
+
+div.nav .navlinks {
+	overflow: hidden;
+	padding: 5px 10px;
+}
+div.nav .navlinks a {
+	text-decoration: none;
+	color: #fff;
+	width: 112px;
+	text-align: center;
+}
+div.nav .navlinks a:first-child {
+	float: left;
+}
+div.nav .navlinks a:last-child {
+	float: right;
+}
+div.nav .navlinks a:hover {
+	font-weight: 900;
 }
 
 .div_container_text {
@@ -168,5 +191,23 @@ div.error {
 	}
 	#bodyText {
 		height: 90px;
+	}
+	div.nav {
+		background: rgb(0, 0, 238);
+		height: 46px;
+		width: 100%;
+	}
+	div.nav div.logo {
+		float: left;
+		padding-left: 100px;
+	}
+	div.nav div.navlinks {
+		float: right;
+		height: 100%;
+		padding-top: 13px;
+		padding-right: 100px;
+	}
+	div.nav div.navlinks a {
+		padding-left: 10px;
 	}
 }
