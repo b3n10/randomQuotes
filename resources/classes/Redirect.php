@@ -8,7 +8,7 @@ class Redirect {
 		case 404:
 			$_SESSION['error'] = '404 Not Found';
 			// change to only /error/ on production
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/public_html/error/');
+			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/error/');
 			break;
 		default:
 			echo 'none';
