@@ -39,21 +39,21 @@ if ($_POST) {
 		<div class="div_mainbody">
 			<form action="" method="POST">
 				<div class="div_submit">
-					<input id="author" type="text" name="author" placeholder="Author of quote" autocomplete="off">
-					<p id="p_author_limit"><?php echo isset($error_arr) && !empty($error_arr) ? $error_arr['author'] : ''; ?></p>
+				<input id="author" type="text" name="author" placeholder="Author of quote" autocomplete="off" value="<?php echo (isset($_POST['author']) && !empty($_POST['author'])) ? $_POST['author'] : ''; ?>">
+					<p id="p_author_limit">Max characters allowed: 30</p>
 				</div>
 				<div class="div_submit">
 					<textarea id="bodyText" name="bodyText" placeholder="Body of text"></textarea>
-					<p id="p_bodytext_limit"><?php echo isset($error_arr) && !empty($error_arr) ? $error_arr['bodyText'] : ''; ?></p>
+					<p id="p_bodytext_limit">Max characters allowed: 200</p>
 				</div>
 				<div class="div_submit">
 					<button type="submit" id="btn_submit">Submit</button>
-					<button type="button" id="btn_clear">Clear</button>
+					<button type="reset" id="btn_clear">Clear</button>
 				</div>
 			</form>
 		</div>
 	</div>
-		<script src="">
+		<script src="./public/dist/js/validate.js">
 		</script>
 	</body>
 </html>

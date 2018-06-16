@@ -10,7 +10,7 @@ body {
 
 /* logo and navigation links */
 div.nav {
-	background: rgb(0, 0, 238);
+	background: #2f7fca;
 }
 
 div.logo {
@@ -149,6 +149,7 @@ div.error {
 }
 #p_author_limit,
 #p_bodytext_limit {
+	display: none;
 	color: red;
 	text-align: right;
 }
