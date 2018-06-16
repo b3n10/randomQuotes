@@ -1,3 +1,26 @@
+<?php
+
+require_once "./resources/init.php";
+
+if ($_POST) {
+	$author = $_POST['author'];
+	$text = $_POST['bodyText'];
+
+	$validator = new Validator();
+
+	$validation = $validator->validate(
+		$_POST['author'],
+		$_POST['bodyText']
+	);
+
+	if ($validation->failed()) {
+		$error_arr = $validation->errors();
+	}
+
+	// $quote = new Quote();
+	// $quote->addNew();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,11 +40,11 @@
 			<form action="" method="POST">
 				<div class="div_submit">
 					<input id="author" type="text" name="author" placeholder="Author of quote" autocomplete="off">
-					<p id="p_author_limit">Max: 30 chars</p>
+					<p id="p_author_limit"><?php echo isset($error_arr) && !empty($error_arr) ? $error_arr['author'] : ''; ?></p>
 				</div>
 				<div class="div_submit">
 					<textarea id="bodyText" name="bodyText" placeholder="Body of text"></textarea>
-					<p id="p_bodytext_limit">Max: 200 chars</p>
+					<p id="p_bodytext_limit"><?php echo isset($error_arr) && !empty($error_arr) ? $error_arr['bodyText'] : ''; ?></p>
 				</div>
 				<div class="div_submit">
 					<button type="submit" id="btn_submit">Submit</button>
