@@ -15,10 +15,11 @@ if ($_POST) {
 
 	if ($validation->failed()) {
 		$error_arr = $validation->errors();
+	} else {
+		$_SESSION['submitted'] = 'Submitted quote waiting for approval!';
+		Redirect::to('home');
 	}
 
-	// $quote = new Quote();
-	// $quote->addNew();
 }
 ?>
 <!DOCTYPE html>
@@ -34,24 +35,26 @@ if ($_POST) {
 		<div class="logo">
 			<a href="/">randomQuotes</a>
 		</div>
+		<div class="navlinks">
+			<a href="#">about</a>
+			<a href="./submit.php">submit quote</a>
+		</div>
 	</div>
-	<div class="error_submit">
-		<?php echo (isset($error_arr['empty']) && !empty($error_arr['empty'])) ? $error_arr['empty'] : '' ; ?>
-	</div>
+	<?php echo Notification::message('fail', (isset($error_arr['empty'])) ? $error_arr['empty'] : ''); ?>
 	<div class="container">
 		<div class="div_mainbody">
 			<form action="" method="POST">
 				<div class="div_submit">
-				<input id="author" type="text" name="author" placeholder="Author of quote" autocomplete="off" value="<?php echo (isset($_POST['author']) && !empty($_POST['author'])) ? $_POST['author'] : ''; ?>">
+				<input id="author" type="text" name="author" placeholder="Author of quote" autocomplete="off" value="<?php echo Sanitize::get('author'); ?>">
 					<p id="p_author_limit">Max characters allowed: 30</p>
 				</div>
 				<div class="div_submit">
-					<textarea id="bodyText" name="bodyText" placeholder="Body of text"></textarea>
+				<textarea id="bodyText" name="bodyText" placeholder="Body of text"><?php echo Sanitize::get('bodyText'); ?></textarea>
 					<p id="p_bodytext_limit">Max characters allowed: 200</p>
 				</div>
 				<div class="div_submit">
 					<button type="submit" id="btn_submit">Submit</button>
-					<button type="reset" id="btn_clear">Clear</button>
+					<button type="button" id="btn_clear">Clear</button>
 				</div>
 			</form>
 		</div>

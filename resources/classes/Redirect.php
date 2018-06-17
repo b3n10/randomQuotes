@@ -10,6 +10,9 @@ class Redirect {
 			// change to only /error/ on production
 			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/error/');
 			break;
+		case 'home':
+			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/');
+			break;
 		default:
 			echo 'none';
 			break;

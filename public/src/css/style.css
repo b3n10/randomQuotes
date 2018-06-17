@@ -63,6 +63,21 @@ div.nav .navlinks a:hover {
 	box-shadow: 0 1px 3px #ccc;
 }
 
+div.notification {
+	max-width: 640px;
+	margin: 5px auto;
+	border-radius: 5px;
+	line-height: 2;
+	text-align: center;
+}
+div.notification.success {
+	background: #009688;
+	color: #fff;
+}
+div.notification.fail {
+	background: #f44336;
+	color: #fff;
+}
 
 .div_container_text {
 	min-height: 245px;
@@ -183,6 +198,9 @@ div.error {
 }
 .div_submit > button#btn_clear {
 	background-color: #ca2f2f
+}
+.div_submit > button.disabled {
+	background-color: #ccc;
 }
 
 @media (min-width: 768px) {

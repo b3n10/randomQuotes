@@ -8,7 +8,7 @@ class Validator {
 
 		if (empty($author) || empty($text)) {
 			$this->_errors += [
-				'empty'	=>	'Input not allowed empty.'
+				'empty'	=>	'Empty input(s) not allowed.'
 			];
 		}
 

@@ -34,6 +34,8 @@ if (empty($_GET['id'])) {
 			<a href="./submit.php">submit quote</a>
 		</div>
 	</div>
+	<?php echo Notification::message('success', (isset($_SESSION['submitted'])) ? $_SESSION['submitted'] : ''); ?>
+	<?php unset($_SESSION['submitted']); ?>
 	<div class="container">
 		<div class="div_mainbody">
 			<div class="div_container_text">
