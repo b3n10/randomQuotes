@@ -6,15 +6,9 @@ class Validator {
 
 	public function validate($author, $text) {
 
-		if (strlen($author) > 30) {
+		if (empty($author) || empty($text)) {
 			$this->_errors += [
-				'author'	=>	'Max characters allowed: 30'
-			];
-		}
-
-		if (strlen($text) > 200) {
-			$this->_errors += [
-				'bodyText'	=>	'Max characters allowed: 200'
+				'empty'	=>	'Input not allowed empty.'
 			];
 		}
 

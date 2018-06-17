@@ -35,6 +35,9 @@ if ($_POST) {
 			<a href="/">randomQuotes</a>
 		</div>
 	</div>
+	<div class="error_submit">
+		<?php echo (isset($error_arr['empty']) && !empty($error_arr['empty'])) ? $error_arr['empty'] : '' ; ?>
+	</div>
 	<div class="container">
 		<div class="div_mainbody">
 			<form action="" method="POST">
