@@ -60,11 +60,11 @@ if ($_POST) {
 		<div class="div_mainbody">
 			<form action="" method="POST">
 				<div class="div_submit">
-				<input id="author" type="text" name="author" placeholder="Author of quote" autocomplete="off" value="<?php echo Sanitize::get('author'); ?>">
+				<input id="author" type="text" name="author" placeholder="Author of quote" autocomplete="off" value="<?php echo Input::get('author'); ?>">
 					<p id="p_author_limit">Max characters allowed: 30</p>
 				</div>
 				<div class="div_submit">
-				<textarea id="bodyText" name="bodyText" placeholder="Body of text"><?php echo Sanitize::get('bodyText'); ?></textarea>
+				<textarea id="bodyText" name="bodyText" placeholder="Body of text"><?php echo Input::get('bodyText'); ?></textarea>
 					<p id="p_bodytext_limit">Max characters allowed: 200</p>
 				</div>
 				<div class="div_submit">

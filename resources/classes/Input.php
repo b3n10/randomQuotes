@@ -1,6 +1,6 @@
 <?php
 
-class Sanitize {
+class Input {
 
 	public static function get($value) {
 
