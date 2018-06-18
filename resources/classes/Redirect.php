@@ -2,15 +2,17 @@
 
 class Redirect {
 
-	public static function to($loc = null) {
+	public static function to($msg, $loc = null) {
 
 		switch ($loc) {
-		case 404:
-			$_SESSION['error'] = '404 Not Found';
-			// change to only /error/ on production
+		case 'error':
+			$_SESSION['error'] = $msg;
+			// change to only /error/ in production
 			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/error/');
 			break;
 		case 'home':
+			$_SESSION['submitted'] = $msg;
+			// change to only / in production
 			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/');
 			break;
 		default:

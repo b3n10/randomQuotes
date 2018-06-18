@@ -55,6 +55,29 @@ class Quote extends DB {
 
 	}
 
+	public function addNew($author, $text) {
+
+		$sql = '
+			INSERT INTO posts
+				(author, text)
+			VALUES
+				(:author, :text)
+			';
+
+		$stmt = $this->_pdo->prepare($sql);
+		$stmt->bindParam(':author', $author);
+		$stmt->bindParam(':text', $text);
+		// var_dump($author, $text);
+		// die();
+
+		if ($stmt->execute()) {
+			return true;
+		}
+
+		return false;
+
+	}
+
 	// return array with data
 	// if quote is not approved, return false
 	private function getArr($arr) {

@@ -11,7 +11,7 @@ if (empty($_GET['id'])) {
 } else {
 	$results = $quote->fetch($_GET['id']);
 	if (!$results) {
-		Redirect::to(404);
+		Redirect::to('404 Not Found!', 'error');
 	}
 }
 
@@ -34,8 +34,10 @@ if (empty($_GET['id'])) {
 			<a href="./submit.php">submit</a>
 		</div>
 	</div>
-	<?php echo Notification::message('success', (isset($_SESSION['submitted'])) ? $_SESSION['submitted'] : ''); ?>
-	<?php unset($_SESSION['submitted']); ?>
+	<?php if (isset($_SESSION['submitted'])): ?>
+		<?php echo Notification::message('success', $_SESSION['submitted']); ?>
+		<?php unset($_SESSION['submitted']); ?>
+	<?php endif ?>
 	<div class="container">
 		<div class="div_mainbody">
 			<div class="div_container_text">

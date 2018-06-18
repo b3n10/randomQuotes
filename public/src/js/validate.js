@@ -6,12 +6,14 @@ const btnSubmit = document.getElementById('btn_submit');
 const btnClear = document.getElementById('btn_clear');
 const notification = document.getElementsByClassName('notification')[0];
 
-setTimeout(() => {
-	notification.style.opacity = 0;
+if (notification) {
 	setTimeout(() => {
-		notification.innerText = '';
-	}, 1000);
-}, 4000);
+		notification.style.opacity = 0;
+		setTimeout(() => {
+			notification.innerText = '';
+		}, 1000);
+	}, 4000);
+}
 
 function checkLength() {
 
