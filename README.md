@@ -11,10 +11,10 @@
 - End: ?
 
 #### TODO:
-- [ ] CSS navbar
+- [x] CSS navbar
 - [x] Fix twitter semi-colon on string
 - [x] Add redirect class
-- [ ] Redirect to errors/success submit
+- [x] Redirect to errors/success submit
 - [x] Add media query
 - [x] Submit page
 - [ ] Admin log in & approval page

@@ -74,7 +74,7 @@ if ($_POST) {
 			</form>
 		</div>
 	</div>
-		<script src="./public/dist/js/validate.js">
+		<script src="./public/dist/js/validate.js?version=<?php echo uniqid(); ?>">
 		</script>
 	</body>
 </html>
