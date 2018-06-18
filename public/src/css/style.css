@@ -30,7 +30,8 @@ div.nav .navlinks {
 }
 div.nav .navlinks a {
 	text-decoration: none;
-	color: #fff;
+	font-weight: 900;
+	color: #cecece;
 	width: 112px;
 	text-align: center;
 }
@@ -40,8 +41,11 @@ div.nav .navlinks a:first-child {
 div.nav .navlinks a:last-child {
 	float: right;
 }
+div.nav .navlinks a.active {
+	color: #fff;
+}
 div.nav .navlinks a:hover {
-	font-weight: 900;
+	color: #fff;
 }
 
 /* main div for app */
@@ -232,6 +236,7 @@ div.error {
 		padding-right: 100px;
 	}
 	div.nav div.navlinks a {
+		padding-top: 2px;
 		padding-left: 10px;
 	}
 }
