@@ -37,7 +37,7 @@ if ($_POST) {
 		</div>
 		<div class="navlinks">
 			<a href="#">about</a>
-			<a href="./submit.php" class="active">submit quote</a>
+			<a href="./submit.php" class="active">submit</a>
 		</div>
 	</div>
 	<?php echo Notification::message('fail', (isset($error_arr['empty'])) ? $error_arr['empty'] : ''); ?>

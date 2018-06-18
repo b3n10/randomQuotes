@@ -6,6 +6,13 @@ const btnSubmit = document.getElementById('btn_submit');
 const btnClear = document.getElementById('btn_clear');
 const notification = document.getElementsByClassName('notification')[0];
 
+setTimeout(() => {
+	notification.style.opacity = 0;
+	setTimeout(() => {
+		notification.innerText = '';
+	}, 1000);
+}, 4000);
+
 function checkLength() {
 
 	if (author.value.length >= 30) {
@@ -33,7 +40,6 @@ function checkLength() {
 author.addEventListener('keyup', checkLength);
 text.addEventListener('keyup', checkLength);
 btnClear.addEventListener('click', () => {
-	notification.innerText = '';
 	author.value = '';
 	text.value = '';
 	authorLimit.style.display = 'none';
@@ -41,5 +47,3 @@ btnClear.addEventListener('click', () => {
 	btnSubmit.disabled = false;
 	btnSubmit.classList.remove('disabled');
 });
-
-

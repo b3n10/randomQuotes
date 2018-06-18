@@ -31,7 +31,7 @@ if (empty($_GET['id'])) {
 		</div>
 		<div class="navlinks">
 			<a href="#">about</a>
-			<a href="./submit.php">submit quote</a>
+			<a href="./submit.php">submit</a>
 		</div>
 	</div>
 	<?php echo Notification::message('success', (isset($_SESSION['submitted'])) ? $_SESSION['submitted'] : ''); ?>

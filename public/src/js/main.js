@@ -14,6 +14,15 @@ const delay = 100; // for animation
 const baseURL = window.location.href.indexOf('?') ? window.location.href.substr(0, window.location.href.indexOf('?')) : window.location.href;
 let shareURL = window.location.href;
 
+const notification = document.getElementsByClassName('notification')[0];
+
+setTimeout(() => {
+	notification.style.opacity = 0;
+	setTimeout(() => {
+		notification.style.display = 'none';
+	}, 1000);
+}, 4000);
+
 next.addEventListener('click', () => {
 	txt_body.style.left = '-565px';
 

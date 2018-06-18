@@ -73,6 +73,7 @@ div.notification {
 	border-radius: 5px;
 	line-height: 2;
 	text-align: center;
+	transition: opacity 1.5s;
 }
 div.notification.success {
 	background: #009688;
