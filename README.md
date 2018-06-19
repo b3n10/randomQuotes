@@ -17,4 +17,6 @@
 - [x] Redirect to errors/success submit
 - [x] Add media query
 - [x] Submit page
-- [ ] Admin log in & approval page
+- [x] Admin approval page
+- [ ] PHP for updating/deleting
+- [ ] Admin log in page

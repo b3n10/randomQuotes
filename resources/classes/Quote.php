@@ -55,6 +55,27 @@ class Quote extends DB {
 
 	}
 
+	public function fetchAll() {
+
+		$arr = [];
+		$sql = '
+				SELECT
+					*
+				FROM posts';
+
+		$stmt = $this->_pdo->prepare($sql);
+		$stmt->execute();
+
+		if ($stmt->rowCount()) {
+
+			// return result as array
+			$arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		}
+
+		return $arr;
+	}
+
 	public function addNew($author, $text) {
 
 		$sql = '

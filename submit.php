@@ -20,6 +20,11 @@ if ($_POST) {
 
 	} else {
 
+		/* remove on production */
+		Redirect::to('Submitted quote waiting for approval!', 'home');
+		die();
+		/* end */
+
 		$quote = new Quote();
 
 		if ($quote->addNew($author, $text)) {
