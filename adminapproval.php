@@ -1,7 +1,27 @@
 <?php
 
 require_once "./resources/init.php";
+
 $quote = new Quote();
+
+if (isset($_POST['submit'])) {
+
+	$status_check = array();
+
+	foreach ($_POST as $key => $val) {
+
+		if ($key !== 'submit') {
+
+			$status_check[] = $quote->update([
+				$key	=>	$val
+			]);
+
+		}
+
+	}
+
+}
+
 $results = $quote->fetchAll();
 
 ?>
@@ -23,17 +43,20 @@ $results = $quote->fetchAll();
 			<a href="./submit.php">submit</a>
 		</div>
 	</div>
-	<?php if (isset($error_arr['empty'])): ?>
-		<?php echo Notification::message('fail', $error_arr['empty']); ?>
+	<?php if (isset($status_check) && in_array('success', $status_check)): ?>
+		<?php echo Notification::message('success', 'Successfully updated posts!'); ?>
+	<?php elseif (isset($status_check) && !in_array('success', $status_check)): ?>
+		<?php echo Notification::message('fail', 'No posts updated!'); ?>
 	<?php endif ?>
 	<div class="tbl_container">
+		<form action="" method="POST">
 		<table class='tbl_head'>
 			<tr>
 				<td>ID</td>
 				<td>Author</td>
 				<td>Text</td>
 				<td>
-					<button type="button" class="update">Update</button>
+					<button type="submit" class="update" name='submit'>Update</button>
 				</td>
 			</tr>
 		</table>
@@ -45,13 +68,13 @@ $results = $quote->fetchAll();
 						<?php foreach ($result as $key => $val): ?>
 							<td>
 							<?php if ($key === 'approved' && $val === '1'): ?>
-								<select id="select<?php echo $result['id']; ?>" name="select<?php echo $result['id']; ?>">
+								<select name="<?php echo $result['id']; ?>">
 									<option value="Pending">Pending</option>
 									<option value="Approve" selected>Approve</option>
 									<option value="Delete">Delete</option>
 								</select>
 							<?php elseif ($key === 'approved' && $val === '0'): ?>
-								<select id="select<?php echo $result['id']; ?>" name="select<?php echo $result['id']; ?>">
+								<select name="<?php echo $result['id']; ?>">
 									<option value="Pending" selected>Pending</option>
 									<option value="Approve">Approve</option>
 									<option value="Delete">Delete</option>
@@ -72,6 +95,7 @@ $results = $quote->fetchAll();
 				</tbody>
 			</table>
 		</div>
+		</form>
 	</div>
 		<script src="./public/dist/js/validate.js?version=<?php echo uniqid(); ?>">
 		</script>

@@ -99,6 +99,45 @@ class Quote extends DB {
 
 	}
 
+	public function update($arr = array()) {
+
+		foreach ($arr as $id => $setting) {
+
+			$sql = 'SELECT approved FROM posts WHERE id=:id';
+
+			$stmt = $this->_pdo->prepare($sql);
+			$stmt->bindParam(':id', $id);
+
+			if ($stmt->execute()) {
+
+				$status = (int)$stmt->fetch()['approved'];
+
+				if ($status === 1 && $setting === 'Pending') {
+					$newSetting = 0;
+				} else if ($status === 0 && $setting === 'Approve') {
+					$newSetting = 1;
+				} else {
+					// if status not changed
+					return false;
+				}
+
+				$sql = 'UPDATE posts SET approved=:newSetting WHERE id=:id';
+
+				$stmt = $this->_pdo->prepare($sql);
+
+				$stmt->bindParam(':newSetting', $newSetting);
+				$stmt->bindParam(':id', $id);
+
+				if ($stmt->execute()) {
+					return 'success';
+				}
+
+			}
+
+		}
+
+	}
+
 	// return array with data
 	// if quote is not approved, return false
 	private function getArr($arr) {

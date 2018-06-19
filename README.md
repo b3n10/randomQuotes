@@ -18,5 +18,6 @@
 - [x] Add media query
 - [x] Submit page
 - [x] Admin approval page
-- [ ] PHP for updating/deleting
+- [x] PHP for updating
+- [ ] PHP for deleting
 - [ ] Admin log in page
