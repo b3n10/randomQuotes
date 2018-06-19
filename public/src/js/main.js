@@ -16,12 +16,14 @@ let shareURL = window.location.href;
 
 const notification = document.getElementsByClassName('notification')[0];
 
-setTimeout(() => {
-	notification.style.opacity = 0;
+if (notification) {
 	setTimeout(() => {
-		notification.style.display = 'none';
+		notification.style.opacity = 0;
+		setTimeout(() => {
+			notification.innerText = '';
+		}, 2500);
 	}, 1000);
-}, 4000);
+}
 
 next.addEventListener('click', () => {
 	txt_body.style.left = '-565px';

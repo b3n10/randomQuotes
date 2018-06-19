@@ -11,8 +11,8 @@ if (notification) {
 		notification.style.opacity = 0;
 		setTimeout(() => {
 			notification.innerText = '';
-		}, 1000);
-	}, 4000);
+		}, 2500);
+	}, 1000);
 }
 
 function checkLength() {
