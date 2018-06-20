@@ -20,11 +20,6 @@ if ($_POST) {
 
 	} else {
 
-		/* remove on production */
-		Redirect::to('Submitted quote waiting for approval!', 'home');
-		die();
-		/* end */
-
 		$quote = new Quote();
 
 		if ($quote->addNew($author, $text)) {
@@ -79,7 +74,7 @@ if ($_POST) {
 			</form>
 		</div>
 	</div>
-		<script src="./public/dist/js/validate.js?version=<?php echo uniqid(); ?>">
-		</script>
+		<script src="./public/dist/js/validate.js?version=<?php echo uniqid(); ?>"></script>
+		<script src="./public/dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
 	</body>
 </html>

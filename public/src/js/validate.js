@@ -4,16 +4,6 @@ const text = document.getElementById('bodyText');
 const textLimit = document.getElementById('p_bodytext_limit');
 const btnSubmit = document.getElementById('btn_submit');
 const btnClear = document.getElementById('btn_clear');
-const notification = document.getElementsByClassName('notification')[0];
-
-if (notification) {
-	setTimeout(() => {
-		notification.style.opacity = 0;
-		setTimeout(() => {
-			notification.innerText = '';
-		}, 2500);
-	}, 1000);
-}
 
 function checkLength() {
 

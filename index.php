@@ -60,7 +60,7 @@ if (empty($_GET['id'])) {
 				window.history.replaceState('', '', url + "?id=<?php echo $results['id'];?>");
 			};
 		</script>
-		<script src="./public/dist/js/main.js?version=<?php echo uniqid(); ?>">
-		</script>
+		<script src="./public/dist/js/main.js?version=<?php echo uniqid(); ?>"></script>
+		<script src="./public/dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
 	</body>
 </html>
