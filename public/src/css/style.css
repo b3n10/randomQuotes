@@ -67,6 +67,7 @@ div.nav .navlinks a:hover {
 	box-shadow: 0 1px 3px #ccc;
 }
 
+/* notifications */
 div.notification {
 	max-width: 640px;
 	margin: 5px auto;
@@ -84,7 +85,7 @@ div.notification.fail {
 	color: #fff;
 }
 
-/* start table */
+/* admin approval page: ./adminapproval.php */
 .tbl_container {
 	position: relative;
 	margin-top: 10px;
@@ -174,13 +175,14 @@ table tr:hover {
 .tbl_head tr:hover {
 	background-color: #fff;
 }
-/* end table */
 
 /* main app in index */
 .div_container_text {
 	min-height: 245px;
 	overflow: hidden;
 }
+
+/* div containing text & author */
 .div_text {
 	position: relative;
 	padding: 10px;
@@ -203,7 +205,15 @@ table tr:hover {
 .div_text p:last-child:before {
 	content: "- ";
 }
+div.div_wait {
+	display: none;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	padding-top: 100px;
+}
 
+/* div containing buttons */
 .div_button {
 	background-color: #f9f9f9;
 	text-align: center;
@@ -236,6 +246,7 @@ table tr:hover {
 	cursor: pointer;
 }
 
+/* error page: ./error/index.php */
 div.error {
 	margin: 50px auto;
 	width: 400px;
@@ -251,6 +262,7 @@ div.error {
 	flex-wrap: wrap;
 }
 
+/* submit page: ./submit.php */
 .div_submit {
 	width: 100%;
 	padding: 7px;

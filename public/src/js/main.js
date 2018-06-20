@@ -1,5 +1,6 @@
 // texts
 const txt_body = document.getElementsByClassName('div_text')[0];
+const div_wait = document.getElementsByClassName('div_wait')[0];
 const ptext = document.getElementById('ptext');
 const pauthor = document.getElementById('pauthor');
 let shareText = ptext.innerText;
@@ -24,7 +25,9 @@ next.addEventListener('click', () => {
 			txt_body.style.display = 'none';
 
 			setTimeout(() => {
-				txt_body.style.left = '565px';
+				txt_body.style.left = '1000px';
+
+				div_wait.style.display = 'block';
 				txt_body.style.display = 'block';
 
 				const xhr = new XMLHttpRequest();
@@ -39,6 +42,7 @@ next.addEventListener('click', () => {
 				// fetched
 				xhr.onload = () => {
 					if (xhr.status === 200) {
+						div_wait.style.display = 'none';
 						txt_body.style.left = '0px';
 
 						// update text

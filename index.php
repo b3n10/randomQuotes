@@ -41,6 +41,9 @@ if (empty($_GET['id'])) {
 	<div class="container">
 		<div class="div_mainbody">
 			<div class="div_container_text">
+				<div class="div_wait">
+					<p>Please wait...</p>
+				</div>
 				<div class="div_text">
 					<p id='ptext'><?php echo htmlspecialchars($results['text']); ?></p>
 					<p id='pauthor'><?php echo htmlspecialchars($results['author']); ?></p>

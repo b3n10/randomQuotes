@@ -19,4 +19,7 @@ INSERT INTO posts (
 ), (
 	"Pastor Ferdie Cabiling",
 	"When God stirs your heart and gives you a dream, He'll provide the grace to believe it, embrace it, and complete it."
+), (
+	"Albert Einstein",
+	"Only two ways to live life. One is as though nothing is a miracle. The other is as though everything is a miracle."
 );
