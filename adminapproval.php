@@ -30,15 +30,6 @@ if (isset($_POST['submit'])) {
 $results = $quote->fetchAll();
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<title>Project 1</title>
-		<link rel="stylesheet" href="./public/dist/css/style.css?version=<?php echo uniqid(); ?>">
-	</head>
-	<body>
 	<?php require_once 'navigation.php'; ?>
 	<?php if (isset($status_check) && in_array('success', $status_check)): ?>
 		<?php echo Notification::message('success', 'Successfully updated posts!'); ?>
@@ -53,7 +44,7 @@ $results = $quote->fetchAll();
 				<td>Author</td>
 				<td>Text</td>
 				<td>
-				<?php if (isset($_SESSION['id']) && $_SESSION['id'] === 2): ?>
+				<?php if (isset($_SESSION['id']) && $_SESSION['id'] === '2'): ?>
 					<button type="submit" class="update" name='submit'>Update</button>
 				<?php endif ?>
 				</td>

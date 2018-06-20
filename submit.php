@@ -35,15 +35,6 @@ if ($_POST) {
 
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<title>Project 1</title>
-		<link rel="stylesheet" href="./public/dist/css/style.css?version=<?php echo uniqid(); ?>">
-	</head>
-	<body>
 	<?php require_once 'navigation.php'; ?>
 	<?php if (isset($error_arr['empty'])): ?>
 		<?php echo Notification::message('fail', $error_arr['empty']); ?>

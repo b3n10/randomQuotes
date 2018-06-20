@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Random Quotes :)</title>
+		<link rel="stylesheet" href="./public/dist/css/style.css?version=<?php echo uniqid(); ?>">
+	</head>
+	<body>
 	<div class="nav">
 		<div class="logo">
 			<a href="/">randomQuotes</a>
