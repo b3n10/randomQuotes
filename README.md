@@ -19,5 +19,6 @@
 - [x] Submit page
 - [x] Admin approval page
 - [x] PHP for updating
-- [ ] PHP for deleting
+- [x] PHP for deleting
+- [ ] Refactor Quotes.php
 - [ ] Admin log in page

@@ -92,8 +92,10 @@ div.notification.fail {
 	margin: 0 auto;
 }
 div.tbl_data {
-	height: 600px;
+	min-height: 100px;
+	max-height: 500px;
 	overflow-y: scroll;
+	border-bottom: 1px solid #ccc;
 }
 .tbl_head {
 	padding-top: 5px;
@@ -120,7 +122,7 @@ div.tbl_data {
 }
 .tbl_head td:nth-child(1),
 .tbl_body td:nth-child(1) {
-	width: 40px;
+	width: 60px;
 }
 .tbl_head td:nth-child(2),
 .tbl_body td:nth-child(2) {
@@ -129,6 +131,10 @@ div.tbl_data {
 .tbl_head td:nth-child(3),
 .tbl_body td:nth-child(3) {
 	width: 500px;
+}
+.tbl_body td:nth-child(2),
+.tbl_body td:nth-child(3) {
+	text-align: justify;
 }
 .tbl_head td:nth-child(4),
 .tbl_body td:nth-child(4) {

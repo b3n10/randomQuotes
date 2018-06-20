@@ -114,18 +114,23 @@ class Quote extends DB {
 
 				if ($status === 1 && $setting === 'Pending') {
 					$newSetting = 0;
+					$sql = 'UPDATE posts SET approved=:newSetting WHERE id=:id';
 				} else if ($status === 0 && $setting === 'Approve') {
 					$newSetting = 1;
+					$sql = 'UPDATE posts SET approved=:newSetting WHERE id=:id';
+				} else if ($setting === 'Delete') {
+					$sql = 'DELETE FROM posts WHERE id=:id';
 				} else {
 					// if status not changed
 					return false;
 				}
 
-				$sql = 'UPDATE posts SET approved=:newSetting WHERE id=:id';
-
 				$stmt = $this->_pdo->prepare($sql);
 
-				$stmt->bindParam(':newSetting', $newSetting);
+				if (isset($newSetting)) {
+					$stmt->bindParam(':newSetting', $newSetting);
+				}
+
 				$stmt->bindParam(':id', $id);
 
 				if ($stmt->execute()) {

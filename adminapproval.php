@@ -39,7 +39,7 @@ $results = $quote->fetchAll();
 			<a href="/">randomQuotes</a>
 		</div>
 		<div class="navlinks">
-			<a href="#">about</a>
+			<a href="./adminapproval.php">approvals</a>
 			<a href="./submit.php">submit</a>
 		</div>
 	</div>
@@ -80,7 +80,7 @@ $results = $quote->fetchAll();
 									<option value="Delete">Delete</option>
 								</select>
 							<?php elseif ($key === 'id' && $result['approved'] === '1'): ?>
-								<a href="/randomQuotes/?id=<?php echo $val; ?>">
+								<a href="/randomQuotes/?id=<?php echo $val; ?>" target="_blank">
 									<strong>
 										<?php echo htmlspecialchars($val); ?>
 									</strong>
@@ -97,7 +97,6 @@ $results = $quote->fetchAll();
 		</div>
 		</form>
 	</div>
-		<script src="./public/dist/js/validate.js?version=<?php echo uniqid(); ?>">
-		</script>
+		<script src="./public/dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
 	</body>
 </html>
