@@ -25,8 +25,14 @@ div.logo a {
 }
 
 div.nav .navlinks {
-	overflow: hidden;
-	padding: 5px 10px;
+	margin: 0 auto;
+	min-width: 320px;
+	text-align: center;
+}
+div.nav .navlinks ul li {
+	display: inline-block;
+	padding: 10px 10px;
+	min-width: 100px;
 }
 div.nav .navlinks a {
 	text-decoration: none;
@@ -34,12 +40,6 @@ div.nav .navlinks a {
 	color: #cecece;
 	width: 112px;
 	text-align: center;
-}
-div.nav .navlinks a:first-child {
-	float: left;
-}
-div.nav .navlinks a:last-child {
-	float: right;
 }
 div.nav .navlinks a.active {
 	color: #fff;
@@ -83,6 +83,26 @@ div.notification.success {
 div.notification.fail {
 	background: #f44336;
 	color: #fff;
+}
+
+/* admin login page: ./adminlogin.php */
+.div_login {
+	padding: 10px;
+}
+.div_login div {
+	padding-top: 10px;
+}
+.div_login label {
+	display: inline-block;
+	width: 90px;
+}
+.div_login select,
+.div_login input,
+.div_login button {
+	padding: 5px;
+}
+.div_login input {
+	width: 200px;
 }
 
 /* admin approval page: ./adminapproval.php */
@@ -337,7 +357,7 @@ div.error {
 	div.nav div.navlinks {
 		float: right;
 		height: 100%;
-		padding-top: 13px;
+		padding-top: 5px;
 		padding-right: 100px;
 	}
 	div.nav div.navlinks a {

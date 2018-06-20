@@ -2,7 +2,7 @@
 
 class Redirect {
 
-	public static function to($msg, $loc = null) {
+	public static function to($msg = '', $loc = null) {
 
 		switch ($loc) {
 		case 'error':
@@ -14,6 +14,10 @@ class Redirect {
 			$_SESSION['submitted'] = $msg;
 			// change to only / in production
 			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/');
+			break;
+		case 'adminpage':
+			// change to only /adminapproval.php in production
+			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/adminapproval.php');
 			break;
 		default:
 			echo 'none';

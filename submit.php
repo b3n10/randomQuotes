@@ -49,8 +49,11 @@ if ($_POST) {
 			<a href="/">randomQuotes</a>
 		</div>
 		<div class="navlinks">
-			<a href="#">about</a>
-			<a href="./submit.php" class="active">submit</a>
+			<ul>
+				<li><a href="#">about</a></li>
+				<li><a href="./adminapproval.php">approval</a></li>
+				<li><a href="./submit.php">submit</a></li>
+			</ul>
 		</div>
 	</div>
 	<?php if (isset($error_arr['empty'])): ?>

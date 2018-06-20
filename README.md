@@ -20,5 +20,8 @@
 - [x] Admin approval page
 - [x] PHP for updating
 - [x] PHP for deleting
-- [ ] Refactor Quotes.php
+- [x] Add login page
+- [ ] Disable updating for non-admin
+- [ ] Refactor Quotes.php (find method)
+- [ ] About page
 - [ ] Admin log in page
