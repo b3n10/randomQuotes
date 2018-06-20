@@ -25,22 +25,7 @@ if (empty($_GET['id'])) {
 		<link rel="stylesheet" href="./public/dist/css/style.css?version=<?php echo uniqid(); ?>">
 	</head>
 	<body>
-	<div class="nav">
-		<div class="logo">
-			<a href="#">randomQuotes</a>
-		</div>
-		<div class="navlinks">
-			<ul>
-				<li><a href="#">about</a></li>
-				<?php if (isset($_SESSION['id'])): ?>
-				<li>
-					<a href="./adminapproval.php">approval</a>
-				</li>
-				<?php endif ?>
-				<li><a href="./submit.php">submit</a></li>
-			</ul>
-		</div>
-	</div>
+	<?php require_once 'navigation.php'; ?>
 	<?php if (isset($_SESSION['msg'])): ?>
 		<?php echo Notification::message('success', $_SESSION['msg']); ?>
 		<?php unset($_SESSION['msg']); ?>
@@ -57,9 +42,15 @@ if (empty($_GET['id'])) {
 				</div>
 			</div>
 			<div class="div_button">
-				<a class="next">next</a>
-				<a class="sharefb">sharefb</a>
-				<a class="sharetw">sharetw</a>
+				<a class="next">
+					next
+				</a>
+				<a class="sharefb">
+					<img src="./public/img/fb.jpg" alt="fb_logo">
+				</a>
+				<a class="sharetw">
+					<img src="./public/img/tw.png" alt="fb_logo">
+				</a>
 			</div>
 		</div>
 	</div>

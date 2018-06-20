@@ -39,18 +39,7 @@ $results = $quote->fetchAll();
 		<link rel="stylesheet" href="./public/dist/css/style.css?version=<?php echo uniqid(); ?>">
 	</head>
 	<body>
-	<div class="nav">
-		<div class="logo">
-			<a href="/">randomQuotes</a>
-		</div>
-		<div class="navlinks">
-			<ul>
-				<li><a href="#">about</a></li>
-				<li><a href="./adminapproval.php">approval</a></li>
-				<li><a href="./submit.php">submit</a></li>
-			</ul>
-		</div>
-	</div>
+	<?php require_once 'navigation.php'; ?>
 	<?php if (isset($status_check) && in_array('success', $status_check)): ?>
 		<?php echo Notification::message('success', 'Successfully updated posts!'); ?>
 	<?php elseif (isset($status_check) && !in_array('success', $status_check)): ?>

@@ -22,5 +22,5 @@
 - [x] PHP for deleting
 - [x] Add login page
 - [x] Disable updating for non-admin
-- [ ] About page
+- [x] About page
 - [ ] Refactor Quotes.php (find method)
