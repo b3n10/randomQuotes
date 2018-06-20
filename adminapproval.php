@@ -64,7 +64,11 @@ $results = $quote->fetchAll();
 			<table class='tbl_body'>
 				<tbody>
 					<?php foreach($results as $result): ?>
-					<tr>
+						<?php if ($result['approved'] === '0'): ?>
+							<tr class='pending'>
+						<?php else: ?>
+							<tr>
+						<?php endif ?>
 						<?php foreach ($result as $key => $val): ?>
 							<td>
 							<?php if ($key === 'approved' && $val === '1'): ?>

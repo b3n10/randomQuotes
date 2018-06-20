@@ -164,6 +164,10 @@ div.tbl_data {
 	border-radius: 4px;
 }
 
+.tbl_body tr.pending {
+	background-color: #ffe0f6;
+}
+
 table tr:hover {
 	background-color: beige;
 }
