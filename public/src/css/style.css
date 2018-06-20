@@ -234,6 +234,7 @@ p.about {
 div.div_wait {
 	display: none;
 	position: absolute;
+	left: 0;
 	text-align: center;
 	width: 100%;
 	padding-top: 100px;

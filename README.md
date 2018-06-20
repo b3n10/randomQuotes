@@ -8,7 +8,7 @@
 
 #### Timeline:
 - Start: May 30, 2018
-- End: ?
+- End: June 20, 2018
 
 #### TODO:
 - [x] CSS navbar
