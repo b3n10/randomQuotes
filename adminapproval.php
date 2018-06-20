@@ -2,6 +2,11 @@
 
 require_once "./resources/init.php";
 
+if (!isset($_SESSION['id'])) {
+	Redirect::to('', 'home');
+	die();
+}
+
 $quote = new Quote();
 
 if (isset($_POST['submit'])) {
@@ -59,7 +64,9 @@ $results = $quote->fetchAll();
 				<td>Author</td>
 				<td>Text</td>
 				<td>
+				<?php if (isset($_SESSION['id']) && $_SESSION['id'] === 2): ?>
 					<button type="submit" class="update" name='submit'>Update</button>
+				<?php endif ?>
 				</td>
 			</tr>
 		</table>

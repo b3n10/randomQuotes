@@ -22,7 +22,7 @@ if (empty($_GET['id'])) {
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<title>Project 1</title>
-		<link rel="stylesheet" href="./public/dist/css/style.css">
+		<link rel="stylesheet" href="./public/dist/css/style.css?version=<?php echo uniqid(); ?>">
 	</head>
 	<body>
 	<div class="nav">
@@ -32,14 +32,18 @@ if (empty($_GET['id'])) {
 		<div class="navlinks">
 			<ul>
 				<li><a href="#">about</a></li>
-				<li><a href="./adminapproval.php">approval</a></li>
+				<?php if (isset($_SESSION['id'])): ?>
+				<li>
+					<a href="./adminapproval.php">approval</a>
+				</li>
+				<?php endif ?>
 				<li><a href="./submit.php">submit</a></li>
 			</ul>
 		</div>
 	</div>
-	<?php if (isset($_SESSION['submitted'])): ?>
-		<?php echo Notification::message('success', $_SESSION['submitted']); ?>
-		<?php unset($_SESSION['submitted']); ?>
+	<?php if (isset($_SESSION['msg'])): ?>
+		<?php echo Notification::message('success', $_SESSION['msg']); ?>
+		<?php unset($_SESSION['msg']); ?>
 	<?php endif ?>
 	<div class="container">
 		<div class="div_mainbody">

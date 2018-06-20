@@ -39,7 +39,6 @@ div.nav .navlinks a {
 	font-weight: 900;
 	color: #cecece;
 	width: 112px;
-	text-align: center;
 }
 div.nav .navlinks a.active {
 	color: #fff;

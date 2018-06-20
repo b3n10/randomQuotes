@@ -11,7 +11,7 @@ class Redirect {
 			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/error/');
 			break;
 		case 'home':
-			$_SESSION['submitted'] = $msg;
+			$_SESSION['msg'] = $msg;
 			// change to only / in production
 			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/');
 			break;

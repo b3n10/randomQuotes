@@ -51,7 +51,11 @@ if ($_POST) {
 		<div class="navlinks">
 			<ul>
 				<li><a href="#">about</a></li>
-				<li><a href="./adminapproval.php">approval</a></li>
+				<?php if (isset($_SESSION['id'])): ?>
+				<li>
+					<a href="./adminapproval.php">approval</a>
+				</li>
+				<?php endif ?>
 				<li><a href="./submit.php">submit</a></li>
 			</ul>
 		</div>
