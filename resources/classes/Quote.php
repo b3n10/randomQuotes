@@ -61,7 +61,7 @@ class Quote extends DB {
 		$sql = '
 				SELECT
 					*
-				FROM posts';
+				FROM posts ORDER BY id DESC';
 
 		$stmt = $this->_pdo->prepare($sql);
 		$stmt->execute();

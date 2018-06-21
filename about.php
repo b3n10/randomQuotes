@@ -3,7 +3,6 @@
 require_once './resources/init.php';
 
 ?>
-<!DOCTYPE html>
 	<?php require_once 'navigation.php'; ?>
 	<div class="container">
 		<div class="div_mainbody">
