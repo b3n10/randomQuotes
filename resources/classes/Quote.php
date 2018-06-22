@@ -1,6 +1,12 @@
 <?php
 
-class Quote extends DB {
+class Quote {
+
+	private $_db;
+
+	public function __construct() {
+		$this->_db = DB::getInstance();
+	}
 
 	// fetch a quote
 	public function fetch($id = '') {
@@ -10,46 +16,24 @@ class Quote extends DB {
 
 		if (!empty($id)) {
 
-			$sql = '
-			SELECT
-				*
-			FROM posts
-			WHERE id = :id';
+			$sql = 'SELECT * FROM posts WHERE id = :id';
 
-			$stmt = $this->_pdo->prepare($sql);
-			$stmt->bindParam(':id', $id);
-			$stmt->execute();
+			$results = $this->_db->action($sql, [
+				':id'	=>	$id
+			]);
 
-			if ($stmt->rowCount()) {
-				$arr = $stmt->fetch();
-				return $this->getArr($arr);
-			}
-
-			return false;
-
+			return $this->getArr($results);
 		} else {
 
 			while (!$isApproved) {
 
-				$sql = '
-				SELECT
-					*
-				FROM posts
-				ORDER BY RAND() LIMIT 1';
-				$stmt = $this->_pdo->prepare($sql);
-				$stmt->execute();
-
-				if ($stmt->rowCount()) {
-
-					// return result as array
-					$arr = $stmt->fetch();
-					$isApproved = $this->isApproved($arr['approved']);
-
-				}
+				$sql = 'SELECT * FROM posts ORDER BY RAND() LIMIT 1';
+				$results = $this->_db->action($sql);
+				$isApproved = $this->isApproved($results['approved']);
 
 			}
 
-			return $this->getArr($arr);
+			return $this->getArr($results);
 
 		}
 
@@ -146,7 +130,7 @@ class Quote extends DB {
 	// return array with data
 	// if quote is not approved, return false
 	private function getArr($arr) {
-		if ($this->isApproved($arr['approved'])) {
+		if (isset($arr['approved']) && $this->isApproved($arr['approved'])) {
 			return array(
 				'id'			=>	$arr['id'],
 				'text'		=>	$arr['text'],

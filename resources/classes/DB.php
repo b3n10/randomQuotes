@@ -4,6 +4,7 @@
 class DB {
 
 	protected $_pdo;
+	private static $_instance = null;
 
 	public function __construct() {
 
@@ -21,13 +22,22 @@ class DB {
 
 	}
 
+	public function getInstance() {
+		if (!self::$_instance) {
+			self::$_instance = new DB();
+		}
+		return self::$_instance;
+	}
+
 	public function action($sql, $bindParams = array()) {
 
 		$results_array = array();
 		$stmt = $this->_pdo->prepare($sql);
 
-		foreach ($bindParams as $key => &$val) {
-			$stmt->bindParam($key, $val);
+		if (!empty($bindParams)) {
+			foreach ($bindParams as $key => &$val) {
+				$stmt->bindParam($key, $val);
+			}
 		}
 
 		if ($stmt->execute()) {
