@@ -1,10 +1,15 @@
-const notification = document.getElementsByClassName('notification')[0];
+const notifications = Array.from(document.getElementsByClassName('notification'));
 
-if (notification) {
-	setTimeout(() => {
-		notification.style.opacity = 0;
+if (notifications) {
+	let timer1 = 1500;
+
+	notifications.forEach(notification => {
 		setTimeout(() => {
-			notification.innerText = '';
-		}, 2500);
-	}, 1000);
+			notification.style.opacity = 0;
+			setTimeout(() => {
+				notification.innerText = '';
+			}, 2500);
+		}, timer1);
+		timer1 += 2500;
+	});
 }

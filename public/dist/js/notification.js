@@ -1,1 +1,1 @@
-"use strict";var notification=document.getElementsByClassName("notification")[0];notification&&setTimeout(function(){notification.style.opacity=0,setTimeout(function(){notification.innerText=""},2500)},1e3);
+"use strict";var notifications=Array.from(document.getElementsByClassName("notification"));if(notifications){var timer1=1500;notifications.forEach(function(t){setTimeout(function(){t.style.opacity=0,setTimeout(function(){t.innerText=""},2500)},timer1),timer1+=2500})}
