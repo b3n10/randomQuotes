@@ -8,7 +8,11 @@ class Validator {
 
 		if (empty($author) || empty($text)) {
 			$this->_errors += [
-				'empty'	=>	'Empty input(s) not allowed.'
+				'empty'	=>	'Empty input(s) not allowed !'
+			];
+		} else if (ctype_space($author) || ctype_space($text)) {
+			$this->_errors += [
+				'whitespace'	=>	'Whitespace(s) only not allowed !'
 			];
 		}
 

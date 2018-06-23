@@ -9,7 +9,7 @@ class Quote {
 	}
 
 	// fetch a quote
-	public function fetch($id = '') {
+	public function fetch($id = '', $editing = false) {
 		$isApproved = false;
 		$arr = [];
 
@@ -20,6 +20,8 @@ class Quote {
 			$results = $this->_db->action($sql, [
 				':id'	=>	$id
 			]);
+
+			if ($editing) return $results;
 
 			return $this->getArr($results);
 		} else {
@@ -96,6 +98,22 @@ class Quote {
 			}
 			return false;
 		}
+	}
+
+	public function edit($id, $author, $text) {
+		$sql = 'UPDATE posts set author=:author, text=:text WHERE id=:id';
+
+		$results = $this->_db->action($sql, [
+			':id'			=>	$id,
+			':author'	=>	$author,
+			':text'		=>	$text
+		]);
+
+		if ($results) return true;
+		var_dump($results);
+		die();
+
+		return false;
 	}
 
 	// return array with data

@@ -43,7 +43,7 @@ if (isset($status_check)) {
 		<form action="" method="POST">
 		<table class='tbl_head'>
 			<tr>
-				<td>ID</td>
+				<td>Edit</td>
 				<td>Author</td>
 				<td>Text</td>
 				<td>
@@ -76,10 +76,10 @@ if (isset($status_check)) {
 									<option value="Approve">Approve</option>
 									<option value="Delete">Delete</option>
 								</select>
-							<?php elseif ($key === 'id' && $result['approved'] === '1'): ?>
-								<a href="/randomQuotes/?id=<?php echo $val; ?>" target="_blank">
+							<?php elseif ($key === 'id'): ?>
+								<a href="/randomQuotes/edit.php?id=<?php echo $val; ?>" target="_blank">
 									<strong>
-										<?php echo htmlspecialchars($val); ?>
+										ID: <?php echo htmlspecialchars($val); ?>
 									</strong>
 								</a>
 							<?php else: ?>

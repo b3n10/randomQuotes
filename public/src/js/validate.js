@@ -13,13 +13,13 @@ function checkLength() {
 		authorLimit.style.display = 'none';
 	}
 
-	if (text.value.length >= 200) {
+	if (text.value.length >= 201) {
 		textLimit.style.display = 'block';
 	} else {
 		textLimit.style.display = 'none';
 	}
 
-	if (author.value.length >= 30 || text.value.length >= 200) {
+	if (author.value.length >= 30 || text.value.length >= 201) {
 		btnSubmit.disabled = true;
 		btnSubmit.classList.add('disabled');
 	} else {

@@ -3,7 +3,6 @@
 require_once "./resources/init.php";
 
 if ($_POST) {
-
 	$author = $_POST['author'];
 	$text = $_POST['bodyText'];
 
@@ -15,14 +14,12 @@ if ($_POST) {
 	);
 
 	if ($validation->failed()) {
-
 		$error_arr = $validation->errors();
-
 	} else {
-
 		$quote = new Quote();
+		$result = $quote->addNew($author, $text);
 
-		if ($quote->addNew($author, $text)) {
+		if ($result) {
 			Redirect::to('Submitted quote waiting for approval!', 'home');
 			die();
 		}
@@ -30,15 +27,17 @@ if ($_POST) {
 		// if error inserting
 		Redirect::to('Error submitting your quote :(', 'error');
 		die();
-
 	}
+}
 
+require_once 'navigation.php';
+
+if (isset($error_arr)) {
+	foreach ($error_arr as $error) {
+		echo Notification::message('fail', $error);
+	}
 }
 ?>
-	<?php require_once 'navigation.php'; ?>
-	<?php if (isset($error_arr['empty'])): ?>
-		<?php echo Notification::message('fail', $error_arr['empty']); ?>
-	<?php endif ?>
 	<div class="container">
 		<div class="div_mainbody">
 			<form action="" method="POST">
