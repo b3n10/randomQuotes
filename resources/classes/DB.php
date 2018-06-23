@@ -41,11 +41,22 @@ class DB {
 		}
 
 		if ($stmt->execute()) {
-			$fetch_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			// INSERT, UPDATE, DELETE no need for results, so return true on success
+			try {
+				$fetch_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			} catch (PDOException $e) {
+				return true;
+			}
 
-			foreach ($fetch_results as $fr) {
-				foreach ($fr as $key => $val) {
-					$results_array += [$key => $val];
+			// if mulitple or all sets of array are requested
+			if (count($fetch_results) > 1) {
+				return $fetch_results;
+			}
+
+			// if only 1 set of array is requested
+			foreach ($fetch_results as $array) {
+				foreach ($array as $key => $val) {
+						$results_array += [$key => $val];
 				}
 			}
 

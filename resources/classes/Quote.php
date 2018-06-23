@@ -10,12 +10,11 @@ class Quote {
 
 	// fetch a quote
 	public function fetch($id = '') {
-
 		$isApproved = false;
 		$arr = [];
 
 		if (!empty($id)) {
-
+			// select by $id
 			$sql = 'SELECT * FROM posts WHERE id = :id';
 
 			$results = $this->_db->action($sql, [
@@ -26,75 +25,44 @@ class Quote {
 		} else {
 
 			while (!$isApproved) {
-
 				$sql = 'SELECT * FROM posts ORDER BY RAND() LIMIT 1';
 				$results = $this->_db->action($sql);
 				$isApproved = $this->isApproved($results['approved']);
-
 			}
 
 			return $this->getArr($results);
-
 		}
-
 	}
 
 	public function fetchAll() {
+		$sql = 'SELECT * FROM posts ORDER BY id DESC';
+		$results = $this->_db->action($sql);
 
-		$arr = [];
-		$sql = '
-				SELECT
-					*
-				FROM posts ORDER BY id DESC';
-
-		$stmt = $this->_pdo->prepare($sql);
-		$stmt->execute();
-
-		if ($stmt->rowCount()) {
-
-			// return result as array
-			$arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-		}
-
-		return $arr;
+		return $results;
 	}
 
 	public function addNew($author, $text) {
+		$sql = 'INSERT INTO posts (author, text) VALUES (:author, :text)';
+		$results = $this->_db->action($sql, [
+			':author'	=>	$author,
+			':text'		=>	$text
+		]);
 
-		$sql = '
-			INSERT INTO posts
-				(author, text)
-			VALUES
-				(:author, :text)
-			';
-
-		$stmt = $this->_pdo->prepare($sql);
-		$stmt->bindParam(':author', $author);
-		$stmt->bindParam(':text', $text);
-		// var_dump($author, $text);
-		// die();
-
-		if ($stmt->execute()) {
-			return true;
-		}
+		if ($results) return true;
 
 		return false;
-
 	}
 
-	public function update($arr = array()) {
-
-		foreach ($arr as $id => $setting) {
-
+	public function update($array = array()) {
+		foreach ($array as $id => $setting) {
 			$sql = 'SELECT approved FROM posts WHERE id=:id';
 
-			$stmt = $this->_pdo->prepare($sql);
-			$stmt->bindParam(':id', $id);
+			$results = $this->_db->action($sql, [
+				':id'	=>	$id
+			]);
 
-			if ($stmt->execute()) {
-
-				$status = (int)$stmt->fetch()['approved'];
+			if ($results) {
+				$status = (int)$results['approved'];
 
 				if ($status === 1 && $setting === 'Pending') {
 					$newSetting = 0;
@@ -109,22 +77,25 @@ class Quote {
 					return false;
 				}
 
-				$stmt = $this->_pdo->prepare($sql);
-
 				if (isset($newSetting)) {
-					$stmt->bindParam(':newSetting', $newSetting);
+					// UPDATE: newSetting, id
+					$results = $this->_db->action($sql, [
+						':newSetting'	=>	$newSetting,
+						':id'					=>	$id
+					]);
+
+					if ($results) return 'update';
+				} else {
+					// DELETE: id
+					$results = $this->_db->action($sql, [
+						':id'	=>	$id
+					]);
+
+					if ($results) return 'delete';
 				}
-
-				$stmt->bindParam(':id', $id);
-
-				if ($stmt->execute()) {
-					return 'success';
-				}
-
 			}
-
+			return false;
 		}
-
 	}
 
 	// return array with data

@@ -10,32 +10,35 @@ if (!isset($_SESSION['id'])) {
 $quote = new Quote();
 
 if (isset($_POST['submit'])) {
-
 	$status_check = array();
 
 	foreach ($_POST as $key => $val) {
-
 		if ($key !== 'submit') {
-
 			$status_check[] = $quote->update([
 				$key	=>	$val
 			]);
-
 		}
-
 	}
 
 }
 
 $results = $quote->fetchAll();
 
+require_once 'navigation.php';
+
+if (isset($status_check)) {
+	if (count(array_intersect(['update', 'delete'], $status_check))) {
+		if (in_array('update', $status_check)) {
+			echo Notification::message('success', 'Successfully updated posts!');
+		}
+		if (in_array('delete', $status_check)) {
+			echo Notification::message('success', 'Successfully deleted posts!');
+		}
+	} else {
+		echo Notification::message('fail', 'No posts updated!');
+	}
+}
 ?>
-	<?php require_once 'navigation.php'; ?>
-	<?php if (isset($status_check) && in_array('success', $status_check)): ?>
-		<?php echo Notification::message('success', 'Successfully updated posts!'); ?>
-	<?php elseif (isset($status_check) && !in_array('success', $status_check)): ?>
-		<?php echo Notification::message('fail', 'No posts updated!'); ?>
-	<?php endif ?>
 	<div class="tbl_container">
 		<form action="" method="POST">
 		<table class='tbl_head'>

@@ -25,8 +25,8 @@
 - [x] About page
 - [ ] Edit post
 - [ ] Whitespace error msg
-- [ ] Different notification msg for deleted post
+- [x] Different notification msg for deleted post
 - [ ] Notification messages animate more time
 - [ ] Log out for admin
 - [ ] Session timeout
-- [ ] Refactor Quotes.php (find method)
+- [x] Refactor Quotes.php
