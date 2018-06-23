@@ -53,6 +53,9 @@ div.page_title {
 	padding: 10px;
 	font-size: 2em;
 }
+div.page_title p {
+	text-align: center;
+}
 
 /* main div for app */
 .container {

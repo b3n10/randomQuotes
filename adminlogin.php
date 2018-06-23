@@ -26,8 +26,9 @@ if (isset($_POST['submit'])) {
 
 }
 
+$page_title = 'Login';
+require_once 'navigation.php';
 ?>
-	<?php require_once 'navigation.php'; ?>
 	<?php if (isset($fail_msg)): ?>
 		<?php echo Notification::message('fail', $fail_msg); ?>
 	<?php endif ?>
