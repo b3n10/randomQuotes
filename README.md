@@ -27,7 +27,7 @@
 - [x] Whitespace error msg
 - [x] Different notification msg for deleted post
 - [x] Notification messages animate more time
-- [ ] Add active on links
+- [x] Add active on links
 - [ ] Log out for admin
 - [ ] Session timeout
 - [x] Refactor Quotes.php
