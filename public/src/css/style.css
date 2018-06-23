@@ -47,6 +47,13 @@ div.nav .navlinks a:hover {
 	color: #fff;
 }
 
+div.page_title {
+	max-width: 640px;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 2em;
+}
+
 /* main div for app */
 .container {
 	position: relative;

@@ -46,6 +46,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 	die();
 }
 
+$page_title = 'Edit';
 require_once 'navigation.php';
 
 if (isset($status_check)) {

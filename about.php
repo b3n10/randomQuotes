@@ -2,8 +2,10 @@
 
 require_once './resources/init.php';
 
+$page_title = 'About';
+require_once 'navigation.php';
+
 ?>
-	<?php require_once 'navigation.php'; ?>
 	<div class="container">
 		<div class="div_mainbody">
 			<p class="about">

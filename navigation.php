@@ -13,13 +13,18 @@
 		</div>
 		<div class="navlinks">
 			<ul>
-				<li><a href="./about.php">about</a></li>
+				<li>
+					<a href="./about.php" class="<?php echo Page::className($page_title, 'About'); ?>">about</a>
+				</li>
 				<?php if (isset($_SESSION['id'])): ?>
 				<li>
-					<a href="./adminapproval.php">approval</a>
+					<a href="./adminapproval.php" class="<?php echo Page::className($page_title, 'Approval'); ?>">approval</a>
 				</li>
 				<?php endif ?>
-				<li><a href="./submit.php">submit</a></li>
+				<li>
+					<a href="./submit.php" class="<?php echo Page::className($page_title, 'Submit'); ?>">submit</a>
+				</li>
 			</ul>
 		</div>
 	</div>
+	<?php echo Page::heading($page_title); ?>

@@ -30,6 +30,7 @@ if ($_POST) {
 	}
 }
 
+$page_title = 'Submit';
 require_once 'navigation.php';
 
 if (isset($error_arr)) {

@@ -23,10 +23,11 @@
 - [x] Add login page
 - [x] Disable updating for non-admin
 - [x] About page
-- [ ] Edit post
-- [ ] Whitespace error msg
+- [x] Edit post
+- [x] Whitespace error msg
 - [x] Different notification msg for deleted post
-- [ ] Notification messages animate more time
+- [x] Notification messages animate more time
+- [ ] Add active on links
 - [ ] Log out for admin
 - [ ] Session timeout
 - [x] Refactor Quotes.php
