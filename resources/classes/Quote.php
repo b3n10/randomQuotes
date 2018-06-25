@@ -13,9 +13,6 @@ class Quote {
 		$isApproved = false;
 		$arr = [];
 
-		var_dump(empty($id));
-		die();
-
 		if (!empty($id)) {
 			// select by $id
 			$sql = 'SELECT * FROM posts WHERE id = :id';
@@ -29,8 +26,11 @@ class Quote {
 			return $this->getArr($results);
 		} else {
 
+			var_dump(empty($id));
+			die();
+
 			while (!$isApproved) {
-				$sql = 'SELECT * FROM posts ORDER BY RAND() LIMIT 1';
+				$sql = 'SELECT * FROM posts ORDER BY RANDOM() LIMIT 1';
 				$results = $this->_db->action($sql);
 				$isApproved = $this->isApproved($results['approved']);
 			}
