@@ -21,7 +21,7 @@ class DB {
 			    ltrim($db["path"], "/")
 			));
 
-			var_dump($$this->_pdo);
+			var_dump($this->_pdo);
 			die();
 
 			/*
