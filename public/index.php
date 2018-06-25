@@ -29,8 +29,8 @@ require_once 'navigation.php';
 					<p>Please wait...</p>
 				</div>
 				<div class="div_text">
-					<p id='ptext'><?php echo htmlspecialchars($results['text']); ?></p>
-					<p id='pauthor'><?php echo htmlspecialchars($results['author']); ?></p>
+					<p id='ptext'><?php echo htmlspecialchars(trim(trim($results['text'], '"“'))); ?></p>
+					<p id='pauthor'><?php echo htmlspecialchars(trim(trim(trim($results['author'], '-'), '"“'))); ?></p>
 				</div>
 			</div>
 			<div class="div_button">
