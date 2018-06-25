@@ -31,10 +31,10 @@ require_once 'navigation.php';
 				</div>
 				<div class="div_text">
 					<p id='ptext'>
-						<?php echo htmlspecialchars(trim($results['text'], '-“\'" ')); ?>
+						<?php echo htmlspecialchars(trim($results['text'], '-“\'"” ')); ?>
 					</p>
 					<p id='pauthor'>
-						<?php echo htmlspecialchars(trim($results['author'], '-“\'" ')); ?>
+						<?php echo htmlspecialchars(trim($results['author'], '-“\'"” ')); ?>
 					</p>
 				</div>
 			</div>
