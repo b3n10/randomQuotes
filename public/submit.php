@@ -3,14 +3,15 @@
 require_once "../resources/init.php";
 
 if ($_POST) {
-	$author = $_POST['author'];
-	$text = $_POST['bodyText'];
+	// control input on submit
+	$author	= htmlspecialchars(str_replace(array('\r', '\n'), "", trim($_POST['author'], '-“\'"” ')));
+	$text		= htmlspecialchars(str_replace(array('\r', '\n'), "", trim($_POST['bodyText'], '-“\'"” ')));
 
 	$validator = new Validator();
 
 	$validation = $validator->validate(
-		$_POST['author'],
-		$_POST['bodyText']
+		$author,
+		$text
 	);
 
 	if ($validation->failed()) {

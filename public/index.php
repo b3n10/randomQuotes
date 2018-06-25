@@ -30,10 +30,10 @@ require_once 'navigation.php';
 				</div>
 				<div class="div_text">
 					<p id='ptext'>
-						<?php echo trim(htmlspecialchars($results['text']), '-“\'"” '); ?>
+						<?php echo $results['text']; ?>
 					</p>
 					<p id='pauthor'>
-						<?php echo trim(htmlspecialchars($results['author']), '-“\'"” '); ?>
+						<?php echo $results['author']; ?>
 					</p>
 				</div>
 			</div>
