@@ -86,9 +86,6 @@ class Quote {
 						':id'					=>	$id
 					]);
 
-					var_dump($results);
-					die();
-
 					if ($results) return 'update';
 				} else {
 					// DELETE: id
