@@ -1,5 +1,7 @@
 <?php
 
+die('test heroku');
+
 require_once "../resources/init.php";
 
 $quote = new Quote();
