@@ -2,12 +2,24 @@
 
 session_start();
 
+$db = parse_url(getenv("DATABASE_URL"));
+
+// $pdo = new PDO("pgsql:" . sprintf(
+//     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+//     $db["host"],
+//     $db["port"],
+//     $db["user"],
+//     $db["pass"],
+//     ltrim($db["path"], "/")
+// ));
+
 $_SESSION['config'] = [
-	'host'			=>	'ec2-54-235-70-253.compute-1.amazonaws.com',
-	'dbname'		=>	'dq2ug9i8fp2h0',
+	'host'			=>	$db['host'],
+	'port'			=>	$db['port'],
+	'dbname'		=>	ltrim($db["path"], "/"),
 	'charset'		=>	'charset=utf8',
-	'user'			=>	'nblrtactkhqfmo',
-	'password'	=>	'7c3b903cfff2476f836ec606714d06fbc1aa6dbd664d612e876ee49ff586ca79'
+	'user'			=>	$db['user'],
+	'password'	=>	$db['pass']
 ];
 
 spl_autoload_register(function($class) {
