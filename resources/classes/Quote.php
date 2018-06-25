@@ -13,6 +13,9 @@ class Quote {
 		$isApproved = false;
 		$arr = [];
 
+		var_dump('test fetch here');
+		die();
+
 		if (!empty($id)) {
 			// select by $id
 			$sql = 'SELECT * FROM posts WHERE id = :id';
