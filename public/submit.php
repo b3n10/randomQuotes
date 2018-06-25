@@ -9,10 +9,6 @@ if ($_POST) {
 	$author	= htmlspecialchars(str_replace(array('\r', '\n'), "", trim($author, '-“\'"” ')));
 	$text		= htmlspecialchars(str_replace(array('\r', '\n'), "", trim($text, '-“\'"” ')));
 
-	echo '<pre>';
-	var_dump($author, $text);
-	die();
-
 	$validator = new Validator();
 
 	$validation = $validator->validate(
