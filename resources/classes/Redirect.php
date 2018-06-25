@@ -8,16 +8,16 @@ class Redirect {
 		case 'error':
 			$_SESSION['error'] = $msg;
 			// change to only /error/ in production
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/error/');
+			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomquotes/error/');
 			break;
 		case 'home':
 			$_SESSION['msg'] = $msg;
 			// change to only / in production
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/');
+			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomquotes/public/');
 			break;
 		case 'adminpage':
 			// change to only /adminapproval.php in production
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomQuotes/adminapproval.php');
+			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomquotes/adminapproval.php');
 			break;
 		default:
 			echo 'none';
