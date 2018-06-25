@@ -8,6 +8,7 @@ class Redirect {
 		case 'error':
 			$_SESSION['error'] = $msg;
 			// change to only /error/ in production
+			// test
 			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomquotes/error/');
 			break;
 		case 'home':
