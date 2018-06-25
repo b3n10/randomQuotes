@@ -13,7 +13,7 @@ class Quote {
 		$isApproved = false;
 		$arr = [];
 
-		var_dump('test fetch here');
+		var_dump(empty($id));
 		die();
 
 		if (!empty($id)) {
