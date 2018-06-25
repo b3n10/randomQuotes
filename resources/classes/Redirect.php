@@ -7,17 +7,14 @@ class Redirect {
 		switch ($loc) {
 		case 'error':
 			$_SESSION['error'] = $msg;
-			// change to only /error/ in production
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomquotes/error/');
+			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/error/');
 			break;
 		case 'home':
 			$_SESSION['msg'] = $msg;
-			// change to only / in production
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomquotes/public/');
+			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/');
 			break;
 		case 'adminpage':
-			// change to only /adminapproval.php in production
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/randomquotes/adminapproval.php');
+			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/adminapproval.php');
 			break;
 		default:
 			echo 'none';
