@@ -11,7 +11,7 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 
-var_dump($pdo);
+var_dump(ltrim($db["path"], "/"));
 die();
 
 require_once "../resources/init.php";
