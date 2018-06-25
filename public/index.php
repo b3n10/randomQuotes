@@ -1,6 +1,6 @@
 <?php
 
-require_once "./resources/init.php";
+require_once "../resources/init.php";
 
 $quote = new Quote();
 
