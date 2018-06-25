@@ -1,5 +1,10 @@
 <?php
 
+$db = parse_url(getenv("DATABASE_URL"));
+$db["path"] = ltrim($db["path"], "/");
+var_dump($db);
+die();
+
 require_once "../resources/init.php";
 
 $quote = new Quote();
