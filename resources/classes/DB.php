@@ -52,10 +52,8 @@ class DB {
 			try {
 				$fetch_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				var_dump($fetch_results);
-				die();
 			} catch (PDOException $e) {
 				var_dump('hi catch here');
-				die();
 				return true;
 			}
 
