@@ -30,8 +30,8 @@ require_once 'navigation.php';
 					<p>Please wait...</p>
 				</div>
 				<div class="div_text">
-					<p id='ptext'><?php echo htmlspecialchars(trim(trim($results['text'], '"“'))); ?></p>
-					<p id='pauthor'><?php echo htmlspecialchars(trim(trim(trim($results['author'], '-'), '"“'))); ?></p>
+					<p id='ptext'><?php preg_replace("/[-“'\"]+/", $results['text'], $new_text); echo htmlspecialchars($new_text); ?></p>
+					<p id='pauthor'><?php preg_replace("/[-“'\"]+/", $results['author'], $new_text); echo htmlspecialchars($new_text); ?></p>
 				</div>
 			</div>
 			<div class="div_button">
