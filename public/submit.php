@@ -3,8 +3,14 @@
 require_once "../resources/init.php";
 
 if ($_POST) {
-	$author	= rtrim(htmlspecialchars(str_replace(array('\r', '\n'), "", trim($_POST['author'], '-“\'"” '))), '-“\'"” ');
-	$text		= rtrim(htmlspecialchars(str_replace(array('\r', '\n'), "", trim($_POST['bodyText'], '-“\'"” '))), '-“\'"” ');
+	$author	= rtrim($_POST['author'], '-“\'"” ');
+	$text		= rtrim($_POST['text'], '-“\'"” ');
+
+	$author = trim($author, '-“\'"” ');
+	$text		= trim($text, '-“\'"” ');
+
+	$author	= htmlspecialchars(str_replace(array('\r', '\n'), "", $author));
+	$text		= htmlspecialchars(str_replace(array('\r', '\n'), "", $text));
 
 	$validator = new Validator();
 
