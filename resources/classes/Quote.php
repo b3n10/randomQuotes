@@ -26,9 +26,6 @@ class Quote {
 			return $this->getArr($results);
 		} else {
 
-			var_dump(empty($id));
-			die();
-
 			while (!$isApproved) {
 				$sql = 'SELECT * FROM posts ORDER BY RANDOM() LIMIT 1';
 				$results = $this->_db->action($sql);
