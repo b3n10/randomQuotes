@@ -1,6 +1,6 @@
 <?php
 
-die('test heroku');
+die('test heroku number 2');
 
 require_once "../resources/init.php";
 
