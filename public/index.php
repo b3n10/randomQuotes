@@ -6,6 +6,8 @@ require_once "../resources/init.php";
 // die();
 
 $quote = new Quote();
+var_dump($quote);
+die();
 
 // if no id passed in URL
 if (empty($_GET['id'])) {
