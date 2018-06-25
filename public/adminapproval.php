@@ -81,11 +81,11 @@ if (isset($status_check)) {
 							<?php elseif ($key === 'id'): ?>
 								<a href="/edit.php?id=<?php echo $val; ?>" target="_blank">
 									<strong>
-										ID: <?php echo htmlspecialchars($val); ?>
+										ID: <?php echo trim(htmlspecialchars($val)); ?>
 									</strong>
 								</a>
 							<?php else: ?>
-								<?php echo htmlspecialchars($val); ?>
+								<?php echo trim(trim(htmlspecialchars($val), '"')); ?>
 							<?php endif ?>
 							</td>
 						<?php endforeach ?>
