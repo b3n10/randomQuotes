@@ -79,7 +79,7 @@ if (isset($status_check)) {
 									<option value="Delete">Delete</option>
 								</select>
 							<?php elseif ($key === 'id'): ?>
-								<a href="/randomQuotes/edit.php?id=<?php echo $val; ?>" target="_blank">
+								<a href="/edit.php?id=<?php echo $val; ?>" target="_blank">
 									<strong>
 										ID: <?php echo htmlspecialchars($val); ?>
 									</strong>
