@@ -47,8 +47,8 @@ next.addEventListener('click', () => {
 
 						// update text
 						const response = JSON.parse(xhr.responseText);
-						ptext.innerText = response.text;
-						pauthor.innerText = response.author;
+						ptext.innerText = response.text.replace(/[-'"“]+/g, '');
+						pauthor.innerText = response.author.replace(/[-'"“]+/g, '');
 						shareText = response.text;
 						shareAuthor = response.author;
 
