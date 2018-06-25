@@ -31,12 +31,11 @@ require_once 'navigation.php';
 				</div>
 				<div class="div_text">
 					<p id='ptext'>
-					<?php
-						preg_replace("/[-“'\"]+/", $results['text'], $new_text);
-						echo htmlspecialchars($new_text);
-					?>
+						<?php echo htmlspecialchars(trim($results['text'], '-“\'" ')); ?>
 					</p>
-					<p id='pauthor'><?php preg_replace("/[-“'\"]+/", $results['author'], $new_text); echo htmlspecialchars($new_text); ?></p>
+					<p id='pauthor'>
+						<?php echo htmlspecialchars(trim($results['author'], '-“\'" ')); ?>
+					</p>
 				</div>
 			</div>
 			<div class="div_button">
