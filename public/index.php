@@ -2,16 +2,12 @@
 
 require_once "../resources/init.php";
 
-// var_dump($_SESSION['config']);
-// die();
 
 $quote = new Quote();
 
 // if no id passed in URL
 if (empty($_GET['id'])) {
 	$results = $quote->fetch();
-	var_dump($results);
-	die();
 // if URL has id
 } else {
 	$results = $quote->fetch($_GET['id']);
