@@ -21,9 +21,6 @@ class DB {
 			    ltrim($db["path"], "/")
 			));
 
-			var_dump($this->_pdo);
-			die();
-
 			/*
 				$this->_pdo = new PDO("pgsql:" . sprintf(
 					"host=%s;port=%s;user=%s;password=%s;dbname=%s",
