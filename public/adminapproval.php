@@ -24,6 +24,9 @@ if (isset($_POST['submit'])) {
 
 $results = $quote->fetchAll();
 
+var_dump($_SESSION['id']);
+die();
+
 $page_title = 'Approval';
 
 require_once 'navigation.php';
