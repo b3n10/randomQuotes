@@ -51,9 +51,7 @@ class DB {
 			// INSERT, UPDATE, DELETE no need for results, so return true on success
 			try {
 				$fetch_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-				var_dump($fetch_results);
 			} catch (PDOException $e) {
-				var_dump('hi catch here');
 				return true;
 			}
 
@@ -68,6 +66,9 @@ class DB {
 						$results_array += [$key => $val];
 				}
 			}
+
+			// if try-catch didn't return true for INSERT, UPDATE, DELETE
+			if (empty($results_array)) return true;
 
 			return $results_array;
 		}
