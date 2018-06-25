@@ -24,9 +24,6 @@ if (isset($_POST['submit'])) {
 
 $results = $quote->fetchAll();
 
-var_dump($_SESSION['id']);
-die();
-
 $page_title = 'Approval';
 
 require_once 'navigation.php';
@@ -52,7 +49,7 @@ if (isset($status_check)) {
 				<td>Author</td>
 				<td>Text</td>
 				<td>
-				<?php if (isset($_SESSION['id']) && $_SESSION['id'] === '2'): ?>
+				<?php if (isset($_SESSION['id']) && $_SESSION['id'] === 2): ?>
 					<button type="submit" class="update" name='submit'>Update</button>
 				<?php endif ?>
 				</td>
