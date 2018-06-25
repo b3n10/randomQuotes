@@ -1,6 +1,6 @@
 <?php
 
-require_once "./resources/init.php";
+require_once "../resources/init.php";
 
 if (isset($_SESSION['id'])) {
 	Redirect::to('', 'adminpage');
@@ -54,6 +54,6 @@ require_once 'navigation.php';
 			</div>
 		</div>
 	</div>
-		<script src="./public/dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
+		<script src="./dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
 	</body>
 </html>

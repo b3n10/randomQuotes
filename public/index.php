@@ -38,10 +38,10 @@ require_once 'navigation.php';
 					next
 				</a>
 				<a class="sharefb">
-					<img src="./public/img/fb.jpg" alt="fb_logo">
+					<img src="./img/fb.jpg" alt="fb_logo">
 				</a>
 				<a class="sharetw">
-					<img src="./public/img/tw.png" alt="fb_logo">
+					<img src="./img/tw.png" alt="fb_logo">
 				</a>
 			</div>
 		</div>
@@ -53,7 +53,7 @@ require_once 'navigation.php';
 				window.history.replaceState('', '', url + "?id=<?php echo $results['id'];?>");
 			};
 		</script>
-		<script src="./public/dist/js/main.js?version=<?php echo uniqid(); ?>"></script>
-		<script src="./public/dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
+		<script src="./dist/js/main.js?version=<?php echo uniqid(); ?>"></script>
+		<script src="./dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
 	</body>
 </html>

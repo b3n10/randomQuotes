@@ -1,6 +1,6 @@
 <?php
 
-require_once "./resources/init.php";
+require_once "../resources/init.php";
 
 if (!isset($_SESSION['id'])) {
 	Redirect::to('', 'home');
@@ -83,5 +83,5 @@ if (isset($status_check)) {
 			</form>
 		</div>
 	</div>
-	<script src="./public/dist/js/validate.js?version=<?php echo uniqid(); ?>"></script>
-	<script src="./public/dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
+	<script src="./dist/js/validate.js?version=<?php echo uniqid(); ?>"></script>
+	<script src="./dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>

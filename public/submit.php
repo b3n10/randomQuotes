@@ -1,6 +1,6 @@
 <?php
 
-require_once "./resources/init.php";
+require_once "../resources/init.php";
 
 if ($_POST) {
 	$author = $_POST['author'];
@@ -57,7 +57,7 @@ if (isset($error_arr)) {
 			</form>
 		</div>
 	</div>
-		<script src="./public/dist/js/validate.js?version=<?php echo uniqid(); ?>"></script>
-		<script src="./public/dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
+		<script src="./dist/js/validate.js?version=<?php echo uniqid(); ?>"></script>
+		<script src="./dist/js/notification.js?version=<?php echo uniqid(); ?>"></script>
 	</body>
 </html>
