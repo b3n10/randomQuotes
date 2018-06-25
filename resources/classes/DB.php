@@ -21,25 +21,6 @@ class DB {
 			    ltrim($db["path"], "/")
 			));
 
-			/*
-				$this->_pdo = new PDO("pgsql:" . sprintf(
-					"host=%s;port=%s;user=%s;password=%s;dbname=%s",
-					Config::get('host'),
-					Config::get('port'),
-					Config::get('user'),
-					Config::get('pass'),
-					Config::get('dbname')
-				), [
-					PDO::ATTR_ERRMODE	=>	PDO::ERRMODE_EXCEPTION
-				]);
-			 */
-
-			/*
-			$this->_pdo = new PDO('mysql:host=' . Config::get('host') . ';dbname=' . Config::get('dbname') . ';' . Config::get('charset') , Config::get('user') , Config::get('password'), [
-				PDO::ATTR_ERRMODE	=>	PDO::ERRMODE_EXCEPTION
-			]);
-			 */
-
 		} catch (PDOException $e) {
 
 			die($e->getMessage());
