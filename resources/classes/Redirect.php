@@ -3,7 +3,6 @@
 class Redirect {
 
 	public static function to($msg = '', $loc = null) {
-
 		switch ($loc) {
 		case 'error':
 			$_SESSION['error'] = $msg;
@@ -20,7 +19,6 @@ class Redirect {
 			echo 'none';
 			break;
 		}
-
 	}
 
 	private static function getProtocol() {
