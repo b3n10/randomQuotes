@@ -2,8 +2,8 @@
 
 require_once "../resources/init.php";
 
-var_dump($_SESSION['config']);
-die();
+// var_dump($_SESSION['config']);
+// die();
 
 $quote = new Quote();
 
