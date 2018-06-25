@@ -59,7 +59,7 @@ if (isset($status_check)) {
 			<table class='tbl_body'>
 				<tbody>
 					<?php foreach($results as $result): ?>
-						<?php if ($result['approved'] === '0'): ?>
+						<?php if ($result['approved'] === 0): ?>
 							<tr class='pending'>
 						<?php else: ?>
 							<tr>
