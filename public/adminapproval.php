@@ -66,13 +66,13 @@ if (isset($status_check)) {
 						<?php endif ?>
 						<?php foreach ($result as $key => $val): ?>
 							<td>
-							<?php if ($key === 'approved' && $val === '1'): ?>
+							<?php if ($key === 'approved' && $val === 1): ?>
 								<select name="<?php echo $result['id']; ?>">
 									<option value="Pending">Pending</option>
 									<option value="Approve" selected>Approve</option>
 									<option value="Delete">Delete</option>
 								</select>
-							<?php elseif ($key === 'approved' && $val === '0'): ?>
+							<?php elseif ($key === 'approved' && $val === 0): ?>
 								<select name="<?php echo $result['id']; ?>">
 									<option value="Pending" selected>Pending</option>
 									<option value="Approve">Approve</option>
