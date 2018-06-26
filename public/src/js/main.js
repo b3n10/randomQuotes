@@ -47,10 +47,10 @@ next.addEventListener('click', () => {
 
 						// update text
 						const response = JSON.parse(xhr.responseText);
-						ptext.innerText = response.text.replace(/\r?\n|\r/g, ' ').trim();
+
+						ptext.innerText = "\"" + response.text.replace(/\r?\n|\r/g, ' ').trim() + "\"";
 						pauthor.innerText = response.author.replace(/\r?\n|\r/g, ' ').trim();
-						// shareText = response.text.replace(/\r?\n|\r/g, ' ').trim();
-						// shareAuthor = response.author.replace(/\r?\n|\r/g, ' ').trim();
+
 						shareText = ptext.innerText;
 						shareAuthor = pauthor.innerText;
 

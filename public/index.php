@@ -30,7 +30,7 @@ require_once 'navigation.php';
 				</div>
 				<div class="div_text">
 					<p id='ptext'>
-						<?php echo $results['text']; ?>
+						"<?php echo $results['text']; ?>"
 					</p>
 					<p id='pauthor'>
 						<?php echo $results['author']; ?>
