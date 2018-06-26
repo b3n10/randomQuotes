@@ -6,9 +6,6 @@ if ($_POST) {
 	$author	= trim($_POST['author'], '-“\'"” ');
 	$text		= trim($_POST['bodyText'], '-“\'"” ');
 
-	$author	= trim($author, '-“\'"” ');
-	$text		= trim($text, '-“\'"” ');
-
 	var_dump($author, $text);
 	die();
 
