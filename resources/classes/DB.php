@@ -9,8 +9,10 @@ class DB {
 	public function __construct() {
 
 		try {
-
-			$db = parse_url(getenv("DATABASE_URL"));
+			if (!getenv("DATABASE_URL"))
+				$db = parse_url('postgres://nblrtactkhqfmo:7c3b903cfff2476f836ec606714d06fbc1aa6dbd664d612e876ee49ff586ca79@ec2-54-235-70-253.compute-1.amazonaws.com:5432/dq2ug9i8fp2h0');
+			else
+				$db = parse_url(getenv("DATABASE_URL"));
 
 			$this->_pdo = new PDO("pgsql:" . sprintf(
 			    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
