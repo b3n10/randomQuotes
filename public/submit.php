@@ -3,8 +3,8 @@
 require_once "../resources/init.php";
 
 if ($_POST) {
-	$author = rtrim($_POST['author'], '-“\'"” ');
-	$text		= rtrim($_POST['bodyText'], '-“\'"” ');
+	$author = trim($_POST['author'], '-“\'"” ');
+	$text		= trim($_POST['bodyText'], '-“\'"” ');
 
 	$author	= htmlspecialchars(str_replace(array('\r', '\n'), "", trim($author, '-“\'"” ')));
 	$text		= htmlspecialchars(str_replace(array('\r', '\n'), "", trim($text, '-“\'"” ')));
