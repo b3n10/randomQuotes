@@ -3,11 +3,11 @@
 require_once "../resources/init.php";
 
 if ($_POST) {
-	$author = trim($_POST['author'], '-“\'"” ');
+	$author	= trim($_POST['author'], '-“\'"” ');
 	$text		= trim($_POST['bodyText'], '-“\'"” ');
 
-	$author	= htmlspecialchars(str_replace(array('\r', '\n'), "", trim($author, '-“\'"” ')));
-	$text		= htmlspecialchars(str_replace(array('\r', '\n'), "", trim($text, '-“\'"” ')));
+	$author	= htmlspecialchars(str_replace(array('\r', '\n'), "", $author));
+	$text		= htmlspecialchars(str_replace(array('\r', '\n'), "", $text));
 
 	$validator = new Validator();
 
