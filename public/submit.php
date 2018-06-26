@@ -6,6 +6,9 @@ if ($_POST) {
 	$author	= trim($_POST['author'], '-“\'"” ');
 	$text		= trim($_POST['bodyText'], '-“\'"” ');
 
+	var_dump($author, $text);
+	die();
+
 	$author	= htmlspecialchars(str_replace(array('\r', '\n'), "", $author));
 	$text		= htmlspecialchars(str_replace(array('\r', '\n'), "", $text));
 
