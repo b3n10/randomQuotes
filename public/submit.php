@@ -4,11 +4,26 @@ require_once "../resources/init.php";
 
 if ($_POST) {
 	// control input on submit
-	$author	= trim($_POST['author'], '-“\'"” ');
-	$text		= trim($_POST['bodyText'], '-“\'"” ');
+	$author	= trim($_POST['author'], ' ');
+	$text		= trim($_POST['bodyText'], ' ');
+
+	// var_dump(
+	// 	trim($author, '-“\'"” '),
+	// 	trim($text, '-“\'"” ')
+	// );
+
+	$author	= trim($author, '-“\'"” ');
+	$text		= trim($text, '-“\'"” ');
+
+	// var_dump($author, $text);
+	// die();
 
 	$author	= htmlspecialchars(str_replace(array('\r', '\n'), "", $author));
 	$text		= htmlspecialchars(str_replace(array('\r', '\n'), "", $text));
+
+	// echo '<pre>';
+	// var_dump($author, $text);
+	// die();
 
 	$validator = new Validator();
 
