@@ -10,12 +10,12 @@ class DB {
 
 		try {
 			$this->_pdo = new PDO("pgsql:" . sprintf(
-			    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-			    $db["host"],
-			    $db["port"],
-			    $db["user"],
-			    $db["pass"],
-			    ltrim($db["path"], "/")
+				"host=%s;port=%s;user=%s;password=%s;dbname=%s",
+				Config::get('host'),
+				Config::get('port'),
+				Config::get('user'),
+				Config::get('pass'),
+				Config::get('dbname')
 			));
 		} catch (PDOException $e) {
 			die($e->getMessage());
@@ -66,17 +66,5 @@ class DB {
 		}
 
 		return false;
-	}
-
-	public function find($table, $where) {
-		$sql = "SELECT * FROM $table"; //WHERE usertype = :usertype AND password = :password';
-
-		if (!empty($where)) {
-			foreach ($where as $k => $v) {
-				echo $k . ' ' . $v . '<br>';
-			}
-		}
-
-		die();
 	}
 }
