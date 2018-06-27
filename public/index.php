@@ -16,8 +16,11 @@ if (empty($_GET['id'])) {
 	}
 }
 
+die('<a href="../resources/getRandom.php">get random</a>');
+
 $page_title = '';
 require_once 'navigation.php';
+
 ?>
 	<?php if (isset($_SESSION['msg'])): ?>
 		<?php echo Notification::message('success', $_SESSION['msg']); ?>
@@ -31,10 +34,10 @@ require_once 'navigation.php';
 				</div>
 				<div class="div_text">
 					<p id='ptext'>
-						“<?php echo $results['text']; ?>”
+						“<?php echo htmlspecialchars($results['text']); ?>”
 					</p>
 					<p id='pauthor'>
-						<?php echo $results['author']; ?>
+						<?php echo htmlspecialchars($results['author']); ?>
 					</p>
 				</div>
 			</div>
