@@ -1,0 +1,4 @@
+# https://stackoverflow.com/a/15211159/6353682
+RewriteEngine on
+
+RewriteRule ^(.*)$ /randomquotes/public/$1 [L]
