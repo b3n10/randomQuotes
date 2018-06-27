@@ -33,7 +33,7 @@ next.addEventListener('click', () => {
 				const xhr = new XMLHttpRequest();
 
 				// prepare request
-				xhr.open('GET', '../resources/getRandom.php', true);
+				xhr.open('GET', './getRandom.php', true);
 
 				// fetching
 				xhr.onprogress = () => {
