@@ -18,6 +18,7 @@ if (isset($_POST['submit'])) {
 
 	if ($loginStatus) {
 		$_SESSION['id'] = $loginStatus['id'];
+		Session::create();
 		Redirect::to('', 'adminpage');
 		die();
 	}

@@ -2,10 +2,7 @@
 
 require_once "../resources/init.php";
 
-if (!isset($_SESSION['id'])) {
-	Redirect::to('', 'home');
-	die();
-}
+Session::check();
 
 $quote = new Quote();
 
