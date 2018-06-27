@@ -1,6 +1,3 @@
+public/src/ merge=dev
+public/.htaccess merge=dev
 .htaccess merge=dev
-public/src/css/style.css
-public/src/js/main.js
-public/src/js/notification.js
-public/src/js/validate.js
-resources/classes/Redirect.php
