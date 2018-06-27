@@ -16,7 +16,9 @@ if (empty($_GET['id'])) {
 	}
 }
 
-die('<a href="../resources/getRandom.php">get random</a>');
+require_once "../resources/getRandom.php";
+
+die();
 
 $page_title = '';
 require_once 'navigation.php';
