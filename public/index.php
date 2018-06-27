@@ -2,7 +2,6 @@
 
 require_once "../resources/init.php";
 
-
 $quote = new Quote();
 
 // if no id passed in URL

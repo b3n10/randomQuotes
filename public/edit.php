@@ -77,7 +77,7 @@ if (isset($status_check)) {
 					<input type="hidden" name="postID" value="<?php echo $result['id']; ?>">
 				</div>
 				<div class="div_submit">
-					<button type="submit" id="btn_submit">Submit</button>
+					<button type="submit" id="btn_submit">Update</button>
 					<button type="button" id="btn_clear">Clear</button>
 				</div>
 			</form>

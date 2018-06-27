@@ -6,14 +6,14 @@ class Redirect {
 		switch ($loc) {
 		case 'error':
 			$_SESSION['error'] = $msg;
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/error/');
+			header('Location: ' . self::getHostAddr() . '/error/');
 			break;
 		case 'home':
 			$_SESSION['msg'] = $msg;
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/');
+			header('Location: ' . self::getHostAddr());
 			break;
 		case 'adminpage':
-			header('Location: ' . self::getProtocol() . $_SERVER['SERVER_NAME'] . '/adminapproval.php');
+			header('Location: ' . self::getHostAddr() . '/adminapproval.php');
 			break;
 		default:
 			echo 'none';
@@ -21,7 +21,7 @@ class Redirect {
 		}
 	}
 
-	private static function getProtocol() {
-		return empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+	private static function getHostAddr() {
+		return (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'];
 	}
 }
