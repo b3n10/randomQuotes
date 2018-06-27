@@ -16,10 +16,6 @@ if (empty($_GET['id'])) {
 	}
 }
 
-require_once "../resources/getRandom.php";
-
-die();
-
 $page_title = '';
 require_once 'navigation.php';
 
