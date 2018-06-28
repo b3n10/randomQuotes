@@ -20,7 +20,7 @@ require_once 'navigation.php';
 
 ?>
 	<?php if (isset($_SESSION['msg'])): ?>
-		<?php echo Notification::message('success', $_SESSION['msg']); ?>
+		<?php echo Notification::message('alert', $_SESSION['msg']); ?>
 		<?php unset($_SESSION['msg']); ?>
 	<?php endif ?>
 	<div class="container">

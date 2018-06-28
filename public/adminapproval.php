@@ -2,7 +2,7 @@
 
 require_once "../resources/init.php";
 
-Session::check();
+Session::isLoggedIn();
 
 $quote = new Quote();
 

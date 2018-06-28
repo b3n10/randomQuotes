@@ -52,6 +52,7 @@ div.page_title {
 	margin: 0 auto;
 	padding: 10px;
 	font-size: 2em;
+	font-weight: 800;
 }
 div.page_title p {
 	text-align: center;
@@ -85,8 +86,8 @@ div.notification {
 	text-align: center;
 	transition: opacity 3.5s;
 }
-div.notification.success {
-	background: #009688;
+div.notification.alert {
+	background: #708fab;
 	color: #fff;
 }
 div.notification.fail {

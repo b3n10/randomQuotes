@@ -16,14 +16,14 @@
 				<li>
 					<a href="./about.php" class="<?php echo Page::className($page_title, 'About'); ?>">about</a>
 				</li>
-				<?php if (isset($_SESSION['id'])): ?>
-				<li>
-					<a href="./adminapproval.php" class="<?php echo Page::className($page_title, 'Approval'); ?>">approval</a>
-				</li>
-				<?php endif ?>
 				<li>
 					<a href="./submit.php" class="<?php echo Page::className($page_title, 'Submit'); ?>">submit</a>
 				</li>
+				<?php if (Session::check('id')): ?>
+				<li>
+					<a href="./adminapproval.php" class="<?php echo Page::className($page_title, 'Approval'); ?>">admin</a>
+				</li>
+				<?php endif ?>
 			</ul>
 		</div>
 	</div>

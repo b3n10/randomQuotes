@@ -48,7 +48,7 @@ require_once 'navigation.php';
 
 if (isset($status_check)) {
 		if ($status_check === 'success') {
-			echo Notification::message('success', 'Successfully updated posts :)');
+			echo Notification::message('alert', 'Successfully updated posts :)');
 		} else {
 			echo Notification::message('fail', 'Error updating post :(');
 		}

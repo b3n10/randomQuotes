@@ -2,7 +2,7 @@
 
 require_once "../resources/init.php";
 
-if (isset($_SESSION['id'])) {
+if (Session::check('id')) {
 	Redirect::to('', 'adminpage');
 	die();
 }

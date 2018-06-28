@@ -7,18 +7,31 @@ class Session {
 		$_SESSION['end']		= $_SESSION['start'] + (30 * 60);
 	}
 
-	public static function check() {
-		if (!isset($_SESSION['id'])) {
-			Redirect::to('', 'home');
+	public static function check($name) {
+		return isset($_SESSION[$name]);
+	}
+
+	public static function get($name) {
+		return $_SESSION[$name];
+	}
+
+	public static function destroy($array = []) {
+		foreach ($array as $arr) {
+			unset($_SESSION[$arr]);
+		}
+	}
+
+	public static function isLoggedIn() {
+		if (!self::check('id')) {
+			Redirect::to('No privilege to access page!', 'home');
 			die();
 		} else {
+
 			$now = time();
 
-			if ($now > $_SESSION['end']) {
-				unset($_SESSION['start']);
-				unset($_SESSION['end']);
-				unset($_SESSION['id']);
-				Redirect::to('', 'home');
+			if ($now > self::get('end')) {
+				self::destroy(['start', 'end', 'id']);
+				Redirect::to('You are now logged out!', 'home');
 				die();
 			}
 		}
