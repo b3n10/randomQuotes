@@ -27,10 +27,10 @@ require_once 'navigation.php';
 if (isset($status_check)) {
 	if (count(array_intersect(['update', 'delete'], $status_check))) {
 		if (in_array('update', $status_check)) {
-			echo Notification::message('success', 'Successfully updated posts!');
+			echo Notification::message('alert', 'Successfully updated posts!');
 		}
 		if (in_array('delete', $status_check)) {
-			echo Notification::message('success', 'Successfully deleted posts!');
+			echo Notification::message('alert', 'Successfully deleted posts!');
 		}
 	} else {
 		echo Notification::message('fail', 'No posts updated!');
