@@ -8,7 +8,7 @@
 
 #### Timeline:
 - Start: May 30, 2018
-- End: June 20, 2018
+- End: June 20, 2018 (finish some updates: June 29, 2018)
 
 #### TODO:
 - [x] CSS navbar
@@ -28,7 +28,7 @@
 - [x] Different notification msg for deleted post
 - [x] Notification messages animate more time
 - [x] Add active on links
-- [ ] Log out for admin
+- [x] Log out for admin
 ~ [ ] ~~Cookie session~~
 - [x] Session timeout
 - [x] Refactor Quotes.php
