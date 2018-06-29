@@ -31,7 +31,7 @@ class Session {
 
 			if ($now > self::get('end')) {
 				self::destroy(['start', 'end', 'id']);
-				Redirect::to('You are now logged out!', 'home');
+				Redirect::to('Session already expired!', 'home');
 				die();
 			}
 		}

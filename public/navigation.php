@@ -23,6 +23,9 @@
 				<li>
 					<a href="./adminapproval.php" class="<?php echo Page::className($page_title, 'Approval'); ?>">admin</a>
 				</li>
+				<li>
+					<a href="./logout.php">logout</a>
+				</li>
 				<?php endif ?>
 			</ul>
 		</div>
