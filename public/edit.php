@@ -2,15 +2,21 @@
 
 require_once "../resources/init.php";
 
-Session::check();
+Session::isLoggedIn();
 
 $quote = new Quote();
 
 if ($_POST) {
 	$error_arr = [];
 	$id			= $_POST['postID'];
-	$author = $_POST['author'];
-	$text 	= $_POST['bodyText'];
+	$author	= trim($_POST['author'], ' ');
+	$text		= trim($_POST['bodyText'], ' ');
+
+	$author	= trim($author, '-“\'"” ');
+	$text		= trim($text, '-“\'"” ');
+
+	$author	= str_replace(array('\r', '\n'), "", $author);
+	$text		= str_replace(array('\r', '\n'), "", $text);
 
 	$validator = new Validator();
 

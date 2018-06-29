@@ -9,8 +9,8 @@ if ($_POST) {
 	$author	= trim($author, '-“\'"” ');
 	$text		= trim($text, '-“\'"” ');
 
-	$author	= htmlspecialchars(str_replace(array('\r', '\n'), "", $author));
-	$text		= htmlspecialchars(str_replace(array('\r', '\n'), "", $text));
+	$author	= str_replace(array('\r', '\n'), "", $author);
+	$text		= str_replace(array('\r', '\n'), "", $text);
 
 	$validator = new Validator();
 

@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 		'password'	=>	$_POST['password']
 	]);
 
-	if ($loginStatus) {
+	if ($loginStatus['id']) {
 		$_SESSION['id'] = $loginStatus['id'];
 		Session::create();
 		Redirect::to('', 'adminpage');
