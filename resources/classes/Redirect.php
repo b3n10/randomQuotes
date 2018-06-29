@@ -5,11 +5,11 @@ class Redirect {
 	public static function to($msg = '', $loc = null) {
 		switch ($loc) {
 		case 'error':
-			$_SESSION['error'] = $msg;
-			header('Location: ' . self::getHostAddr() . '/error/');
+			$_SESSION['error_msg'] = $msg;
+			header('Location: ' . self::getHostAddr());
 			break;
 		case 'home':
-			$_SESSION['msg'] = $msg;
+			$_SESSION['success_msg'] = $msg;
 			header('Location: ' . self::getHostAddr());
 			break;
 		case 'adminpage':

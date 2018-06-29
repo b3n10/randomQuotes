@@ -11,7 +11,8 @@ if (empty($_GET['id'])) {
 } else {
 	$results = $quote->fetch($_GET['id']);
 	if (!$results) {
-		Redirect::to('404 Not Found!', 'error');
+		Redirect::to('Quote not found !', 'error');
+		die();
 	}
 }
 
@@ -19,9 +20,12 @@ $page_title = '';
 require_once 'navigation.php';
 
 ?>
-	<?php if (isset($_SESSION['msg'])): ?>
-		<?php echo Notification::message('alert', $_SESSION['msg']); ?>
-		<?php unset($_SESSION['msg']); ?>
+	<?php if (isset($_SESSION['success_msg'])): ?>
+		<?php echo Notification::message('alert', $_SESSION['success_msg']); ?>
+		<?php unset($_SESSION['success_msg']); ?>
+	<?php elseif (isset($_SESSION['error_msg'])): ?>
+		<?php echo Notification::message('fail', $_SESSION['error_msg']); ?>
+		<?php unset($_SESSION['error_msg']); ?>
 	<?php endif ?>
 	<div class="container">
 		<div class="div_mainbody">
