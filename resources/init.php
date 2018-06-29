@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['config'])) {
-	$db = parse_url(getenv("DB_PGSQL_URL"));
+	$db = parse_url(getenv("DATABASE_URL"));
 
 	$_SESSION['config'] = [
 		'host'			=>	$db['host'],
