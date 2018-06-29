@@ -29,6 +29,6 @@
 - [x] Notification messages animate more time
 - [x] Add active on links
 - [ ] Log out for admin
-- [ ] Cookie session
+~ [ ] ~~Cookie session~~
 - [x] Session timeout
 - [x] Refactor Quotes.php
